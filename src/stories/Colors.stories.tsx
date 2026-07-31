@@ -160,6 +160,36 @@ const groups: SwatchGroup[] = [
     ],
   },
   {
+    title: 'Background — function (base)',
+    swatches: [
+      {
+        name: 'function-accent-base',
+        bgClass: 'bg-background-function-accent-base',
+        textClass: 'text-text-function-emphasis',
+      },
+      {
+        name: 'function-error-base',
+        bgClass: 'bg-background-function-error-base',
+        textClass: 'text-text-function-error',
+      },
+      {
+        name: 'function-success-base',
+        bgClass: 'bg-background-function-success-base',
+        textClass: 'text-text-function-success',
+      },
+      {
+        name: 'function-warning-base',
+        bgClass: 'bg-background-function-warning-base',
+        textClass: 'text-text-function-warning',
+      },
+      {
+        name: 'function-info-base',
+        bgClass: 'bg-background-function-info-base',
+        textClass: 'text-text-function-info',
+      },
+    ],
+  },
+  {
     title: 'Background — function (strong)',
     swatches: [
       {

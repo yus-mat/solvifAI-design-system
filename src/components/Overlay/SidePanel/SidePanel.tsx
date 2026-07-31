@@ -211,9 +211,8 @@ export function SidePanel({
               <ButtonIcon
                 emphasis="ghost"
                 intent="default"
-                size="sm"
+                size="md"
                 icon={<X aria-hidden />}
-                className="!p-1"
                 aria-label={closeLabel}
                 onClick={onClose}
               />

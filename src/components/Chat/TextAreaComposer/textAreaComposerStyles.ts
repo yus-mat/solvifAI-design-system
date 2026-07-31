@@ -20,12 +20,11 @@ export function textAreaComposerClassName({
 } = {}) {
   return [
     'relative isolate flex max-h-[600px] w-full flex-col overflow-hidden transition-colors',
-    rounded ? 'rounded-xl' : 'rounded-none',
-    border ? 'border border-solid border-border-neutral-muted' : 'border-0',
+    rounded ? 'rounded-2xl' : 'rounded-none',
+    border
+      ? 'border-[0.5px] border-solid border-border-neutral-muted'
+      : 'border-0',
     typeClassNames[type],
-    border &&
-      !disabled &&
-      'has-[textarea:focus-visible]:border-border-action-primary',
     disabled ? 'opacity-[0.38]' : '',
     className,
   ]
@@ -36,7 +35,7 @@ export function textAreaComposerClassName({
 export const textAreaComposerAttachmentSlotClassName = 'p-3';
 
 export const textAreaComposerInputClassName =
-  'min-h-10 w-full resize-none border-0 bg-transparent px-3 pt-3 caption text-text-neutral-primary outline-none placeholder:text-text-neutral-muted disabled:cursor-not-allowed';
+  'min-h-10 w-full resize-none border-0 bg-transparent px-3 pt-3 body-2 text-text-neutral-primary outline-none placeholder:text-text-neutral-muted disabled:cursor-not-allowed';
 
 export const textAreaComposerActionBarClassName =
   'flex items-center justify-between px-3 py-2';

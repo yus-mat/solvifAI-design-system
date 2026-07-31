@@ -102,7 +102,7 @@ export function ChatMessage({
   children,
   attachment,
   avatar,
-  userName = '山田 太郎',
+  userName,
   timestamp,
   onThumbsUp,
   onThumbsDown,
@@ -111,7 +111,12 @@ export function ChatMessage({
 }: ChatMessageProps) {
   const defaultAvatar =
     type === 'user' ? (
-      <Avatar size="sm" name={userName} colorIndex={1} />
+      <Avatar
+        size="sm"
+        name={userName}
+        colorIndex={userName ? 1 : undefined}
+        active
+      />
     ) : (
       <Avatar size="sm" src={CHAT_AI_AVATAR_SRC} alt={CHAT_AI_AVATAR_ALT} />
     );

@@ -25,16 +25,21 @@
   --color-background-danger-primary: var(--background-danger-primary);
   --color-background-danger-secondary: var(--background-danger-secondary);
 
-  /* ── Background function (subtle + strong) ── */
+  /* ── Background function (subtle + base + strong) ── */
   --color-background-function-accent-subtle: var(--background-function-accent-subtle);
+  --color-background-function-accent-base: var(--background-function-accent-base);
   --color-background-function-accent-strong: var(--background-function-accent-strong);
   --color-background-function-error-subtle: var(--background-function-error-subtle);
+  --color-background-function-error-base: var(--background-function-error-base);
   --color-background-function-error-strong: var(--background-function-error-strong);
   --color-background-function-info-subtle: var(--background-function-info-subtle);
+  --color-background-function-info-base: var(--background-function-info-base);
   --color-background-function-info-strong: var(--background-function-info-strong);
   --color-background-function-success-subtle: var(--background-function-success-subtle);
+  --color-background-function-success-base: var(--background-function-success-base);
   --color-background-function-success-strong: var(--background-function-success-strong);
   --color-background-function-warning-subtle: var(--background-function-warning-subtle);
+  --color-background-function-warning-base: var(--background-function-warning-base);
   --color-background-function-warning-strong: var(--background-function-warning-strong);
   --color-background-function-warning-gradient-end: var(--background-function-warning-gradient-end);
 

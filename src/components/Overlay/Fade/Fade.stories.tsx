@@ -49,9 +49,9 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: { type: 'secondary' },
   render: (args) => (
-    <div className="relative h-40 w-full max-w-md overflow-hidden rounded-lg border border-border-neutral-muted bg-background-neutral-muted p-4">
+    <div className="relative h-40 w-full max-w-md overflow-hidden rounded-lg border border-border-neutral-muted bg-background-function-info-base p-4">
       <p className="m-0 body-2 text-text-neutral-primary">
-        セカンダリフェードはミュート背景上で使用します。
+        セカンダリフェードは function/info/base 背景上で使用します。
       </p>
       <Fade {...args} />
     </div>

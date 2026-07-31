@@ -4,7 +4,7 @@ const gradientClassNames: Record<FadeType, string> = {
   primary:
     'bg-gradient-to-t from-surface-default from-30% to-transparent',
   secondary:
-    'bg-gradient-to-t from-background-neutral-muted from-30% to-transparent',
+    'bg-gradient-to-t from-background-function-info-base from-30% to-transparent',
 };
 
 export function fadeClassName({

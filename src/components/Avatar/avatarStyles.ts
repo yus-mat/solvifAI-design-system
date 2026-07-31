@@ -65,7 +65,7 @@ export function avatarInnerClassName({
     variant === 'initial'
       ? [userBgClassName[colorIndex], userTextClassName[colorIndex]].join(' ')
       : variant === 'icon'
-        ? 'bg-surface-muted text-foreground'
+        ? 'bg-background-neutral-secondary text-text-neutral-primary'
         : '',
   ]
     .filter(Boolean)
