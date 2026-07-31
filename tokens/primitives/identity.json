@@ -1,0 +1,68 @@
+{
+  "color": {
+    "identity": {
+      "user": {
+        "1": {
+          "bg": {
+            "$type": "color",
+            "$description": "Figma Identity/User/1/bg → Raw/color_tailwind/indigo/500"
+          },
+          "text": {
+            "$type": "color",
+            "$description": "Figma Identity/User/1/text → Raw/color_tailwind/gray/50"
+          }
+        },
+        "2": {
+          "bg": {
+            "$type": "color",
+            "$description": "Figma Identity/User/2/bg → Raw/color_tailwind/teal/500"
+          },
+          "text": {
+            "$type": "color",
+            "$description": "Figma Identity/User/2/text → Raw/color_tailwind/gray/50"
+          }
+        },
+        "3": {
+          "bg": {
+            "$type": "color",
+            "$description": "Figma Identity/User/3/bg → Raw/color_tailwind/blue/500"
+          },
+          "text": {
+            "$type": "color",
+            "$description": "Figma Identity/User/3/text → Raw/color_tailwind/gray/50"
+          }
+        },
+        "4": {
+          "bg": {
+            "$type": "color",
+            "$description": "Figma Identity/User/4/bg → Raw/color_tailwind/orange/500"
+          },
+          "text": {
+            "$type": "color",
+            "$description": "Figma Identity/User/4/text → Raw/color_tailwind/gray/50"
+          }
+        },
+        "5": {
+          "bg": {
+            "$type": "color",
+            "$description": "Figma Identity/User/5/bg → Raw/color_tailwind/lime/500"
+          },
+          "text": {
+            "$type": "color",
+            "$description": "Figma Identity/User/5/text → Raw/color_tailwind/gray/50"
+          }
+        },
+        "6": {
+          "bg": {
+            "$type": "color",
+            "$description": "Figma Identity/User/6/bg → Raw/color_tailwind/violet/500"
+          },
+          "text": {
+            "$type": "color",
+            "$description": "Figma Identity/User/6/text → Raw/color_tailwind/gray/50"
+          }
+        }
+      }
+    }
+  }
+}

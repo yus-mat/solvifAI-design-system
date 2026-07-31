@@ -1,0 +1,26 @@
+<style>
+  html,
+  body {
+    margin: 0;
+    background: var(--surface-base);
+  }
+
+  #storybook-root {
+    width: 100%;
+  }
+
+  .sb-show-main.sb-main-fullscreen,
+  .sb-show-main.sb-main-padded {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sbdocs-preview {
+    background: var(--surface-base);
+  }
+
+  /* Let the global story decorator own canvas padding */
+  .sbdocs-preview .docs-story {
+    padding: 0;
+  }
+</style>

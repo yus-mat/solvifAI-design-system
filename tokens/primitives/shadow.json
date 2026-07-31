@@ -1,0 +1,81 @@
+{
+  "shadow": {
+    "$extensions": {
+      "figma": {
+        "file": "WmFckTlgALQCxc15dHSJWR",
+        "source": "effect-styles",
+        "page": "AIチャットドラフト生成",
+        "nodeId": "84:7868"
+      }
+    },
+    "sm": {
+      "$type": "shadow",
+      "$description": "Effect style SM — dropdown / light elevation",
+      "$value": {
+        "color": "{color.alpha.color.black.a4}",
+        "offsetX": "3px",
+        "offsetY": "3px",
+        "blur": "8px",
+        "spread": "0px"
+      },
+      "$extensions": {
+        "figma": {
+          "styleName": "SM",
+          "styleId": "S:e61fe352d68e55cbb24841a60d0626cb5feb37ac,"
+        }
+      }
+    },
+    "md": {
+      "$type": "shadow",
+      "$description": "Effect style MD — modal / panel elevation",
+      "$value": {
+        "color": "{color.alpha.color.black.a4}",
+        "offsetX": "0px",
+        "offsetY": "12px",
+        "blur": "24px",
+        "spread": "1px"
+      },
+      "$extensions": {
+        "figma": {
+          "styleName": "MD",
+          "styleId": "S:6592d3dde14d7b61e70a71897bf85ed589a3ee7a,"
+        }
+      }
+    },
+    "button": {
+      "$type": "shadow",
+      "$description": "Effect style ButtonShadow — layered inner shadow on buttons",
+      "$value": [
+        {
+          "color": "rgba(0, 0, 0, 0.04)",
+          "offsetX": "0.5px",
+          "offsetY": "-8px",
+          "blur": "14px",
+          "spread": "6px",
+          "inset": true
+        },
+        {
+          "color": "rgba(255, 255, 255, 0.04)",
+          "offsetX": "-1px",
+          "offsetY": "3px",
+          "blur": "7px",
+          "spread": "0px",
+          "inset": true
+        },
+        {
+          "color": "rgba(255, 255, 255, 0.04)",
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "6px",
+          "spread": "0px",
+          "inset": true
+        }
+      ],
+      "$extensions": {
+        "figma": {
+          "styleName": "ButtonShadow"
+        }
+      }
+    }
+  }
+}

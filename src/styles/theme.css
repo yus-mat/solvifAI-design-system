@@ -1,0 +1,241 @@
+/**
+ * Tailwind v4 theme — maps semantic CSS variables to utility class namespaces.
+ * Primitives/semantic values are generated in src/styles/generated/*.css
+ *
+ * `inline` is required when values reference other CSS variables (our token vars).
+ * @see https://tailwindcss.com/docs/theme#referencing-other-variables
+ */
+@theme inline {
+  /* ── Surface (Figma Surface/*) ── */
+  --color-surface-base: var(--surface-base);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-raise: var(--surface-raise);
+  --color-surface-default: var(--surface-raise);
+
+  /* ── Background neutral ── */
+  --color-background-neutral-primary: var(--background-neutral-primary);
+  --color-background-neutral-secondary: var(--background-neutral-secondary);
+  --color-background-neutral-muted: var(--background-neutral-muted);
+  --color-background-neutral-inverse: var(--background-neutral-inverse);
+
+  /* ── Background action & danger ── */
+  --color-background-action-primary: var(--background-action-primary);
+  --color-background-action-secondary: var(--background-action-secondary);
+  --color-background-action-primary-gradient-end: var(--background-action-primary-gradient-end);
+  --color-background-danger-primary: var(--background-danger-primary);
+  --color-background-danger-secondary: var(--background-danger-secondary);
+
+  /* ── Background function (subtle + strong) ── */
+  --color-background-function-accent-subtle: var(--background-function-accent-subtle);
+  --color-background-function-accent-strong: var(--background-function-accent-strong);
+  --color-background-function-error-subtle: var(--background-function-error-subtle);
+  --color-background-function-error-strong: var(--background-function-error-strong);
+  --color-background-function-info-subtle: var(--background-function-info-subtle);
+  --color-background-function-info-strong: var(--background-function-info-strong);
+  --color-background-function-success-subtle: var(--background-function-success-subtle);
+  --color-background-function-success-strong: var(--background-function-success-strong);
+  --color-background-function-warning-subtle: var(--background-function-warning-subtle);
+  --color-background-function-warning-strong: var(--background-function-warning-strong);
+  --color-background-function-warning-gradient-end: var(--background-function-warning-gradient-end);
+
+  /* ── Background interactive & overlay ── */
+  --color-background-interactive-default: var(--background-interactive-default);
+  --color-background-interactive-hover: var(--background-interactive-hover);
+  --color-background-interactive-focus: var(--background-interactive-focus);
+  --color-background-interactive-pressed: var(--background-interactive-pressed);
+  --color-background-interactive-selected: var(--background-interactive-selected);
+  --color-background-overlay-strong: var(--background-overlay-strong);
+  --color-background-overlay-subtle: var(--background-overlay-subtle);
+
+  /* ── Text neutral, action, danger, function ── */
+  --color-text-neutral-primary: var(--text-neutral-primary);
+  --color-text-neutral-secondary: var(--text-neutral-secondary);
+  --color-text-neutral-muted: var(--text-neutral-muted);
+  --color-text-neutral-inverse: var(--text-neutral-inverse);
+  --color-text-action-primary: var(--text-action-primary);
+  --color-text-danger-primary: var(--text-danger-primary);
+  --color-text-function-emphasis: var(--text-function-emphasis);
+  --color-text-function-error: var(--text-function-error);
+  --color-text-function-info: var(--text-function-info);
+  --color-text-function-success: var(--text-function-success);
+  --color-text-function-warning: var(--text-function-warning);
+
+  /* ── Border ── */
+  --color-border-neutral-muted: var(--border-neutral-muted);
+  --color-border-neutral-secondary: var(--border-neutral-secondary);
+  --color-border-neutral-primary: var(--border-neutral-primary);
+  --color-border-neutral-inverse: var(--border-neutral-inverse);
+  --color-border-action-primary: var(--border-action-primary);
+  --color-border-function-emphasis: var(--border-function-emphasis);
+  --color-border-function-error: var(--border-function-error);
+  --color-border-function-info: var(--border-function-info);
+  --color-border-function-success: var(--border-function-success);
+  --color-border-function-warning: var(--border-function-warning);
+  --color-interactive-default: var(--background-neutral-primary);
+  --color-interactive-hover: var(--background-interactive-hover);
+  --color-interactive-pressed: var(--background-interactive-pressed);
+
+  --color-brand-primary: var(--background-action-primary);
+  --color-brand-primary-hover: #2552a2;
+  --color-brand-primary-pressed: #22457c;
+  --color-brand-secondary: var(--background-action-secondary);
+  --color-brand-secondary-hover: var(--background-action-secondary);
+  --color-brand-secondary-pressed: var(--background-action-secondary);
+
+  --color-accent-primary: var(--background-action-primary);
+  --color-accent-primary-hover: #2552a2;
+  --color-accent-primary-pressed: #22457c;
+  --color-accent-secondary: var(--background-action-secondary);
+  --color-accent-secondary-hover: var(--background-action-secondary);
+  --color-accent-secondary-pressed: var(--background-action-secondary);
+
+  --color-destructive-primary: var(--background-danger-primary);
+  --color-destructive-primary-hover: #9f0712;
+  --color-destructive-primary-pressed: #82181a;
+  --color-destructive-secondary: transparent;
+  --color-destructive-secondary-hover: var(--background-danger-secondary);
+  --color-destructive-secondary-pressed: var(--background-danger-secondary);
+
+  --color-foreground: var(--text-neutral-primary);
+  --color-muted: var(--text-neutral-muted);
+  --color-inverse: var(--text-neutral-inverse);
+  --color-action: var(--text-action-primary);
+
+  --color-status-error: var(--text-function-error);
+  --color-status-success: var(--text-function-success);
+  --color-status-warning: var(--text-function-warning);
+  --color-status-info: var(--text-function-info);
+  --color-status-accent: var(--text-function-emphasis);
+  --color-error: var(--text-function-error);
+
+  --color-text-primary: var(--text-neutral-primary);
+  --color-text-secondary: var(--text-neutral-secondary);
+  --color-text-muted: var(--text-neutral-muted);
+  --color-text-inverse: var(--text-neutral-inverse);
+  --color-text-action: var(--text-action-primary);
+  --color-text-error: var(--text-function-error);
+  --color-text-success: var(--text-function-success);
+  --color-text-warning: var(--text-function-warning);
+  --color-text-info: var(--text-function-info);
+  --color-text-accent: var(--text-function-emphasis);
+
+  --color-status-success-bg: var(--background-function-success-subtle);
+  --color-status-error-bg: var(--background-function-error-subtle);
+  --color-status-warning-bg: var(--background-function-warning-subtle);
+  --color-status-info-bg: var(--background-function-info-subtle);
+  --color-status-accent-bg: var(--background-function-accent-subtle);
+  --color-status-brand-bg: var(--background-action-secondary);
+
+  --color-border-muted: var(--border-neutral-muted);
+  --color-border-strong: var(--border-neutral-primary);
+  --color-border-action: var(--border-action-primary);
+  --color-border-error: var(--border-function-error);
+  --color-border-success: var(--border-function-success);
+  --color-border-info: var(--border-function-info);
+  --color-border-warning: var(--border-function-warning);
+  --color-border-accent: var(--border-function-emphasis);
+
+  /* Legacy overlay / state fills → new semantic tokens */
+  --color-modal-scrim: var(--background-overlay-strong);
+  --color-drawer-scrim: var(--background-overlay-strong);
+  --color-preview-overlay: var(--background-overlay-subtle);
+  --color-backdrop: var(--background-overlay-strong);
+  --color-selected-fill: var(--background-interactive-selected);
+  --color-hover-fill: var(--background-interactive-hover);
+  --color-pressed-fill: var(--background-interactive-pressed);
+  --color-input-fill: var(--background-interactive-focus);
+  --color-card-hover: var(--background-interactive-hover);
+
+  /* Radius — references primitives (--radius-base = 4px) */
+  --radius-sm: var(--radius-sm);
+  --radius-base: var(--radius-base);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-full: var(--radius-full);
+
+  /* Shadow — references primitives (shadows.css) */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-button: var(--shadow-button);
+
+  /* Identity — avatar user color sets */
+  --color-user-1-bg: var(--user-1-bg);
+  --color-user-1-text: var(--user-1-text);
+  --color-user-2-bg: var(--user-2-bg);
+  --color-user-2-text: var(--user-2-text);
+  --color-user-3-bg: var(--user-3-bg);
+  --color-user-3-text: var(--user-3-text);
+  --color-user-4-bg: var(--user-4-bg);
+  --color-user-4-text: var(--user-4-text);
+  --color-user-5-bg: var(--user-5-bg);
+  --color-user-5-text: var(--user-5-text);
+  --color-user-6-bg: var(--user-6-bg);
+  --color-user-6-text: var(--user-6-text);
+
+  /* Opacity */
+  --opacity-disabled: 0.38;
+
+  /* Typography — Gen Interface JP */
+  --font-sans: 'Gen Interface JP', system-ui, sans-serif;
+  --font-weight-bold: 500;
+}
+
+/*
+ * Semantic typography utilities mirror the Figma text-style names.
+ * Each class owns size, weight, and line height as one indivisible token.
+ */
+@utility caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+@utility caption-bold {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+@utility body-2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+@utility body-2-bold {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+@utility body-1 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@utility body-1-bold {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@utility heading-3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@utility heading-2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@utility heading-1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}

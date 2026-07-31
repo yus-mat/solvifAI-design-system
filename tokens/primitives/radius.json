@@ -1,0 +1,119 @@
+{
+  "borderRadius": {
+    "$extensions": {
+      "figma": {
+        "collection": "Raw/border-radius",
+        "file": "wGuiIwIAHBXQoW8LudaBcz",
+        "mode": "default"
+      }
+    },
+    "none": {
+      "$type": "dimension",
+      "$value": "0px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/none",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/sm",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "base": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/base",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "6px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/md",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/lg",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/xl",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/2xl",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "3xl": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/3xl",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "9999px",
+      "$extensions": {
+        "figma": {
+          "variable": "radius/full",
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    }
+  }
+}

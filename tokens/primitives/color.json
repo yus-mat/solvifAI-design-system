@@ -1,0 +1,1292 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Primitive color palettes from Figma (leaf values live in Figma).",
+  "color": {
+    "tailwind": {
+      "amber": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/amber/950)"
+        }
+      },
+      "black": {
+        "$type": "color",
+        "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/black)"
+      },
+      "blue": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/blue/950)"
+        }
+      },
+      "cyan": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/cyan/950)"
+        }
+      },
+      "emerald": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/emerald/950)"
+        }
+      },
+      "fuchsia": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/fuchsia/950)"
+        }
+      },
+      "gray": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/gray/950)"
+        }
+      },
+      "green": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/green/950)"
+        }
+      },
+      "indigo": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/indigo/950)"
+        }
+      },
+      "lime": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/lime/950)"
+        }
+      },
+      "neutral": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/neutral/950)"
+        }
+      },
+      "orange": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/orange/950)"
+        }
+      },
+      "pink": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/pink/950)"
+        }
+      },
+      "purple": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/purple/950)"
+        }
+      },
+      "red": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/red/950)"
+        }
+      },
+      "rose": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/rose/950)"
+        }
+      },
+      "sky": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/sky/950)"
+        }
+      },
+      "slate": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/slate/950)"
+        }
+      },
+      "stone": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/stone/950)"
+        }
+      },
+      "teal": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/teal/950)"
+        }
+      },
+      "transparent": {
+        "$type": "color",
+        "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/transparent)"
+      },
+      "violet": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/violet/950)"
+        }
+      },
+      "white": {
+        "$type": "color",
+        "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/white)"
+      },
+      "yellow": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/yellow/950)"
+        }
+      },
+      "zinc": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_tailwind/zinc/950)"
+        }
+      }
+    },
+    "custom": {
+      "azure": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Azure/950)"
+        }
+      },
+      "sky-blue": {
+        "50": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/50)"
+        },
+        "100": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/100)"
+        },
+        "200": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/200)"
+        },
+        "300": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/300)"
+        },
+        "400": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/400)"
+        },
+        "500": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/500)"
+        },
+        "600": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/600)"
+        },
+        "700": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/700)"
+        },
+        "800": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/800)"
+        },
+        "900": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/900)"
+        },
+        "950": {
+          "$type": "color",
+          "$description": "Leaf token — source of truth in Figma (Raw/color_custom/Sky blue/950)"
+        }
+      }
+    },
+    "alpha": {
+      "color": {
+        "black": {
+          "a4": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a4)"
+          },
+          "a8": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a8)"
+          },
+          "a12": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a12)"
+          },
+          "a16": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a16)"
+          },
+          "a24": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a24)"
+          },
+          "a32": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a32)"
+          },
+          "a48": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a48)"
+          },
+          "a64": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a64)"
+          },
+          "a80": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/black/a80)"
+          }
+        },
+        "white": {
+          "a4": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a4)"
+          },
+          "a8": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a8)"
+          },
+          "a12": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a12)"
+          },
+          "a16": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a16)"
+          },
+          "a24": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a24)"
+          },
+          "a32": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a32)"
+          },
+          "a48": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a48)"
+          },
+          "a64": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a64)"
+          },
+          "a80": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/white/a80)"
+          }
+        },
+        "neutral": {
+          "a4": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a4)"
+          },
+          "a8": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a8)"
+          },
+          "a12": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a12)"
+          },
+          "a16": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a16)"
+          },
+          "a24": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a24)"
+          },
+          "a32": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a32)"
+          },
+          "a48": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a48)"
+          },
+          "a64": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a64)"
+          },
+          "a80": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/color/neutral/a80)"
+          }
+        }
+      },
+      "semantic": {
+        "state": {
+          "hover-fill": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/state/hover-fill)"
+          },
+          "pressed-fill": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/state/pressed-fill)"
+          },
+          "disabled-fill": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/state/disabled-fill)"
+          },
+          "selected-fill": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/state/selected-fill)"
+          }
+        },
+        "overlay": {
+          "backdrop": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/overlay/backdrop)"
+          },
+          "modal-scrim": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/overlay/modal-scrim)"
+          },
+          "drawer-scrim": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/overlay/drawer-scrim)"
+          },
+          "preview-overlay": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/overlay/preview-overlay)"
+          }
+        },
+        "surface": {
+          "input-fill": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/surface/input-fill)"
+          },
+          "card-hover": {
+            "$type": "color",
+            "$description": "Leaf token — source of truth in Figma ( Raw/color_alpha/semantic/surface/card-hover)"
+          }
+        }
+      }
+    }
+  }
+}
