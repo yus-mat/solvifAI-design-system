@@ -9,9 +9,10 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "tokens:build": "style-dictionary build --config style-dictionary.config.mjs && node scripts/generate-primitive-colors.mjs",
-    "predev": "npm run tokens:build",
-    "prebuild": "npm run tokens:build",
-    "prestorybook": "npm run tokens:build"
+    "manifest:build": "node scripts/generate-manifest.mjs",
+    "predev": "npm run tokens:build && npm run manifest:build",
+    "prebuild": "npm run tokens:build && npm run manifest:build",
+    "prestorybook": "npm run tokens:build && npm run manifest:build"
   },
   "dependencies": {
     "lucide-react": "^1.17.0",
@@ -27,6 +28,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
+    "react-docgen-typescript": "^2.4.0",
     "storybook": "10.4.6",
     "style-dictionary": "^4.3.0",
     "tailwindcss": "^4.1.8",
