@@ -20,7 +20,7 @@ export function chatTextClassName({
   className?: string;
 } = {}) {
   return [
-    'relative body-2 text-text-neutral-primary',
+    'relative body-1 text-text-neutral-primary',
     variantClassNames[variant],
     className,
   ]
@@ -31,4 +31,4 @@ export function chatTextClassName({
 export const chatTextContentClassName = 'm-0 break-words';
 
 export const chatTextThinkingContentClassName =
-  'chat-text-shimmer m-0 body-2 text-text-neutral-secondary';
+  'chat-text-shimmer m-0 body-1 text-text-neutral-secondary';
