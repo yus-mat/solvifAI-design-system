@@ -1,7 +1,7 @@
 import { focusRingOffsetClassName } from '@/styles/focusRing';
 
 export const segmentedControlClassName = [
-  'inline-flex gap-1 rounded-lg border-[0.5px] border-border-neutral-muted bg-background-neutral-secondary p-1',
+  'inline-flex gap-1 rounded-lg bg-background-neutral-secondary p-0.5',
 ].join(' ');
 
 export const segmentedControlItemContentClassName =
@@ -36,7 +36,7 @@ export function segmentedControlItemClassName({
   className?: string;
 } = {}) {
   return [
-    'inline-flex min-w-0 cursor-pointer items-center justify-center rounded-base px-3 py-2',
+    'inline-flex min-w-0 cursor-pointer items-center justify-center rounded-md px-3 py-1.5',
     'text-center whitespace-nowrap transition-colors duration-150',
     'body-2',
     'relative isolate',
