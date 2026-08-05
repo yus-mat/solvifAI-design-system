@@ -55,7 +55,7 @@ export function SegmentedControlItem({
       <span className={segmentedControlItemContentClassName}>
         <span className={segmentedControlItemLabelRowClassName}>
           {showIcon ? (
-            <IconWrapper size="s">
+            <IconWrapper size="md">
               {icon ?? <AlignEndVertical aria-hidden />}
             </IconWrapper>
           ) : null}

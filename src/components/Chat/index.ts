@@ -2,6 +2,9 @@ export { Attachment } from './Attachment';
 export type { AttachmentProps } from './Attachment';
 export type { AttachmentFileType } from './Attachment/attachmentTypes';
 
+export { AnswerPanel } from './AnswerPanel';
+export type { AnswerPanelPage, AnswerPanelProps } from './AnswerPanel';
+
 export { ChatText } from './ChatText';
 export type { ChatTextProps } from './ChatText';
 export type { ChatTextVariant } from './ChatText/chatTextTypes';

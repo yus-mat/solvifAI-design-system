@@ -54,7 +54,7 @@ export const buttonIconWrapperSize: Record<'md' | 'sm', IconWrapperSize> = {
 
 /** Map ButtonIcon `size` to IconWrapper size. */
 export const buttonIconOnlyWrapperSize: Record<'md' | 'sm', IconWrapperSize> = {
-  md: 'md',
+  md: 'lg',
   sm: 's',
 };
 

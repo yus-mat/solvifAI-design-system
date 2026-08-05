@@ -30,6 +30,7 @@ export {
   LayoutGrid,
   ListTodo,
   LoaderCircle,
+  Maximize2,
   MessageCircleMore,
   MessageSquare,
   Mic,

@@ -152,12 +152,14 @@
   --color-card-hover: var(--background-interactive-hover);
 
   /* Radius — references primitives (--radius-base = 4px) */
+  --radius-none: var(--radius-none);
   --radius-sm: var(--radius-sm);
   --radius-base: var(--radius-base);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
   --radius-xl: var(--radius-xl);
   --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
   --radius-full: var(--radius-full);
 
   /* Shadow — references primitives (shadows.css) */

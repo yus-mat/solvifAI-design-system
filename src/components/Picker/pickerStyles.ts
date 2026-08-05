@@ -22,7 +22,7 @@ export function pickerClassName({
   className?: string;
 } = {}) {
   return [
-    'flex w-full min-w-0 cursor-pointer items-center gap-3 rounded-md bg-background-neutral-primary p-3 text-left',
+    'flex w-full min-w-0 cursor-pointer items-center gap-3 rounded-lg bg-background-neutral-primary p-4 text-left',
     insetStrokeClassName(selected),
     interactiveOverlayClassName,
     focusRingOffsetClassName,
@@ -36,10 +36,10 @@ export function pickerClassName({
 export const pickerContentClassName = 'flex min-w-0 flex-1 flex-col gap-0.5';
 
 export const pickerTitleClassName =
-  'body-2-bold text-text-neutral-primary';
+  'body-2 text-text-neutral-primary';
 
 export const pickerSubtitleClassName =
-  'caption text-text-neutral-secondary';
+  'caption text-text-neutral-muted';
 
 export const pickerLeadingClassName = 'flex shrink-0 items-center';
 

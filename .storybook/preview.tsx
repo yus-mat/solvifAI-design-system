@@ -70,7 +70,7 @@ const preview: Preview = {
       storySort: {
         order: [
           'Foundation',
-          ['Colors', ['SemanticPalette', 'RawPalettes', '*'], 'Typography', 'Spacing', 'Motion', 'IconWrapper', 'Token Wiring', 'Link', 'Divider', '*'],
+          ['Colors', ['SemanticPalette', 'RawPalettes', '*'], 'Typography', 'Spacing', 'Radius', 'Motion', 'IconWrapper', 'Token Wiring', 'Link', 'Divider', '*'],
           'Action',
           ['Button', 'ButtonIcon', 'SplitButton', '*'],
           'Content Display',
