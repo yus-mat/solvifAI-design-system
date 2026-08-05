@@ -23,7 +23,7 @@ export function segmentedControlItemTrailingSlotClassName({
   tone?: keyof typeof trailingSlotToneClassNames;
 } = {}) {
   return [
-    'flex shrink-0 items-center body-2-bold',
+    'flex shrink-0 items-center body-2',
     trailingSlotToneClassNames[tone],
   ].join(' ');
 }
@@ -38,7 +38,7 @@ export function segmentedControlItemClassName({
   return [
     'inline-flex min-w-0 cursor-pointer items-center justify-center rounded-base px-3 py-2',
     'text-center whitespace-nowrap transition-colors duration-150',
-    selected ? 'body-2-bold' : 'body-2',
+    'body-2',
     'relative isolate',
     'before:pointer-events-none before:absolute before:inset-0 before:z-0 before:rounded-[inherit]',
     'before:bg-transparent before:transition-colors before:duration-150',
