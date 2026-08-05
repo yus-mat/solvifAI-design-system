@@ -66,7 +66,7 @@ export function Picker({
       </span>
       {selected ? (
         <span className={pickerTrailingClassName}>
-          <IconWrapper size="s">
+          <IconWrapper size="xs">
             <Check aria-hidden />
           </IconWrapper>
         </span>
