@@ -22,8 +22,8 @@ export type ChatMessageProps = {
   type?: ChatMessageType;
   children: ReactNode;
   attachment?: ReactNode;
+  /** Override the default AI avatar. Ignored for user messages. */
   avatar?: ReactNode;
-  userName?: string;
   timestamp?: string;
   onThumbsUp?: () => void;
   onThumbsDown?: () => void;
@@ -102,27 +102,12 @@ export function ChatMessage({
   children,
   attachment,
   avatar,
-  userName,
   timestamp,
   onThumbsUp,
   onThumbsDown,
   onEdit,
   className,
 }: ChatMessageProps) {
-  const defaultAvatar =
-    type === 'user' ? (
-      <Avatar
-        size="sm"
-        name={userName}
-        colorIndex={userName ? 1 : undefined}
-        active
-      />
-    ) : (
-      <Avatar size="sm" src={CHAT_AI_AVATAR_SRC} alt={CHAT_AI_AVATAR_ALT} />
-    );
-
-  const avatarNode = avatar ?? defaultAvatar;
-
   const actions = (
     <ChatMessageActions
       type={type}
@@ -153,11 +138,15 @@ export function ChatMessage({
               {actions}
             </div>
           </div>
-          {avatarNode}
         </div>
       </div>
     );
   }
+
+  const avatarNode =
+    avatar ?? (
+      <Avatar size="sm" src={CHAT_AI_AVATAR_SRC} alt={CHAT_AI_AVATAR_ALT} />
+    );
 
   return (
     <div className={chatMessageClassName({ type, className })}>
