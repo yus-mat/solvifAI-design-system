@@ -1,0 +1,35 @@
+---
+description: Pair IconWrapper size with adjacent typography tokens (body/caption/heading).
+globs: src/components/**/*.{ts,tsx},src/pages/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# IconWrapper ↔ typography pairing
+
+When an `IconWrapper` sits next to (or in the same control as) a text label, sizes must match:
+
+| Typography token | IconWrapper `size` |
+|---|---|
+| `body-2` / `body-2-bold` | `s` (SM) |
+| `body-1` / `body-1-bold` | `md` |
+| `caption` / `caption-bold` | `xs` |
+| `heading-3` / `heading-3-bold` | `lg` |
+
+## Rules
+
+1. **Inline icon + label** — always follow the table (Button, Chip, SegmentedControl, Picker, Tag, ListItem, fields, etc.).
+2. **Mapped helpers** — keep `buttonIconWrapperSize`, `tagIconWrapperSize`, and similar maps aligned with this table when the control’s label token changes.
+3. **Button reference** — `md` → `body-1` + IconWrapper `md`; `sm` → `body-2` + IconWrapper `s`.
+4. **Do not** use IconWrapper `md` next to `body-2`, or `s` next to `body-1` / `caption`, unless an explicit exception is documented.
+
+## Likely exceptions (confirm before changing)
+
+- **Icon-only controls** (`ButtonIcon`) with no adjacent label — size follows the control’s own size API, not a nearby page title.
+- **Decorative separators** (e.g. breadcrumb chevron) — prefer matching the row’s label token unless product specifies otherwise.
+- **Standalone illustrations / large spinners** — may intentionally break the table; call out in code review.
+
+## When editing
+
+- Changing a label from `body-1` → `body-2` ⇒ shrink adjacent IconWrapper `md` → `s`.
+- Changing a label from `body-2` → `caption` ⇒ IconWrapper `s` → `xs`.
+- If Figma and this rule disagree, flag and ask — do not invent a third size.

@@ -1,4 +1,5 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { IconWrapper } from '@/components/IconWrapper';
 import { ChevronDown } from '@/icons';
 import { listItemClassName } from './overlayStyles';
 
@@ -50,9 +51,7 @@ export const ListItem = forwardRef<HTMLButtonElement, ListItemProps>(
         {...rest}
       >
         {showLeading && icon ? (
-          <span className="flex size-[14px] shrink-0 items-center justify-center [&_svg]:size-full">
-            {icon}
-          </span>
+          <IconWrapper size="s">{icon}</IconWrapper>
         ) : null}
         <span className="min-w-0 flex-1 truncate">{children}</span>
       </button>

@@ -42,6 +42,7 @@ export function SegmentedControlItem({
       type={type}
       role="tab"
       aria-selected={selected}
+      data-value={value}
       disabled={isDisabled}
       className={segmentedControlItemClassName({ selected, className })}
       onClick={(event) => {
@@ -51,11 +52,12 @@ export function SegmentedControlItem({
         }
       }}
       {...rest}
+      tabIndex={isDisabled ? -1 : 0}
     >
       <span className={segmentedControlItemContentClassName}>
         <span className={segmentedControlItemLabelRowClassName}>
           {showIcon ? (
-            <IconWrapper size="md">
+            <IconWrapper size="s">
               {icon ?? <AlignEndVertical aria-hidden />}
             </IconWrapper>
           ) : null}

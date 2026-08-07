@@ -97,7 +97,7 @@ export const InlineInCombobox: Story = {
         <Chip onRemove={() => {}}>田中太郎</Chip>
         <Chip onRemove={() => {}}>佐藤花子</Chip>
       </ChipGroup>
-      <IconWrapper size="md" className="ml-auto shrink-0 text-text-neutral-muted">
+      <IconWrapper size="s" className="ml-auto shrink-0 text-text-neutral-muted">
         <Search aria-hidden />
       </IconWrapper>
     </div>

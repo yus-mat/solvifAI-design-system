@@ -1,6 +1,7 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import { useId, useRef, type HTMLAttributes, type ReactNode } from 'react';
 import { ButtonIcon } from '@/components/Button';
 import { X } from '@/icons';
+import { useModalA11y } from '../useModalA11y';
 import type { DrawerSize } from './drawerTypes';
 import {
   drawerBodyClassName,
@@ -37,19 +38,35 @@ export function Drawer({
   closeLabel = '閉じる',
   children,
   className,
+  'aria-labelledby': ariaLabelledBy,
   ...rest
 }: DrawerProps) {
+  const panelRef = useRef<HTMLElement>(null);
+  const titleId = useId();
+  const labelledBy = ariaLabelledBy ?? titleId;
+
+  useModalA11y({
+    open,
+    onClose,
+    containerRef: panelRef,
+  });
+
   return (
     <aside
+      ref={panelRef}
       role="dialog"
       aria-modal="true"
-      aria-hidden={!open}
+      tabIndex={-1}
       className={drawerClassName({ size, open, className })}
       {...rest}
+      aria-hidden={!open}
+      aria-labelledby={labelledBy}
     >
       <header className={drawerHeaderClassName}>
         <div className={drawerTitleGroupClassName}>
-          <h2 className={drawerTitleClassName}>{title}</h2>
+          <h2 id={titleId} className={drawerTitleClassName}>
+            {title}
+          </h2>
           {subtitle ? (
             <p className={drawerSubtitleClassName}>{subtitle}</p>
           ) : null}

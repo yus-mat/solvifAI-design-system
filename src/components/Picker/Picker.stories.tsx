@@ -1,12 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IconWrapper } from '@/components/IconWrapper';
-import { Sparkles } from '@/icons';
+import { ArrowRight, Check, Sparkles } from '@/icons';
 import { Picker } from './Picker';
 import { PickerGroup } from './PickerGroup';
 
 const leadingSlot = (
-  <IconWrapper size="md">
+  <IconWrapper size="s">
     <Sparkles aria-hidden />
+  </IconWrapper>
+);
+
+const customTrailingSlot = (
+  <IconWrapper size="s">
+    <ArrowRight aria-hidden />
   </IconWrapper>
 );
 
@@ -67,6 +73,35 @@ export const ThreeOptions: Story = {
         title="リンク共有"
         subtitle="閲覧用リンクを発行"
         leadingSlot={leadingSlot}
+      />
+    </PickerGroup>
+  ),
+};
+
+export const CustomTrailing: Story = {
+  render: () => (
+    <PickerGroup defaultValue="next" className="max-w-xs">
+      <Picker
+        value="next"
+        title="次へ進む"
+        subtitle="カスタム trailingSlot（矢印）"
+        trailingSlot={customTrailingSlot}
+      />
+      <Picker
+        value="check"
+        title="デフォルト"
+        subtitle="省略時はチェックアイコン"
+        trailingSlot={
+          <IconWrapper size="s">
+            <Check aria-hidden />
+          </IconWrapper>
+        }
+      />
+      <Picker
+        value="none"
+        title="trailing なし"
+        subtitle="trailingSlot={null}"
+        trailingSlot={null}
       />
     </PickerGroup>
   ),

@@ -42,7 +42,7 @@ export function SnackBar({
       {...rest}
     >
       {icon ? (
-        <IconWrapper size="md" className={snackBarIconClassName}>
+        <IconWrapper size="s" className={snackBarIconClassName}>
           {icon}
         </IconWrapper>
       ) : null}

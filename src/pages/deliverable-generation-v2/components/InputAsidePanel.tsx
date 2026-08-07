@@ -131,7 +131,7 @@ function KantenPanelBody() {
   if (kantenLoading) {
     return (
       <div className="flex flex-1 flex-col items-center justify-center gap-4">
-        <IconWrapper size="lg" className="animate-spin text-text-action-primary">
+        <IconWrapper size="s" className="animate-spin text-text-action-primary">
           <LoaderCircle aria-hidden />
         </IconWrapper>
         <p className="m-0 body-2 text-text-neutral-secondary">

@@ -28,13 +28,13 @@ export function ProductTopHeader({
           type="button"
           className="flex w-[198px] items-center gap-2 rounded border border-border-neutral-muted px-3 py-1 text-left"
         >
-          <IconWrapper size="s">
+          <IconWrapper size="xs">
             <Folder aria-hidden />
           </IconWrapper>
           <span className="min-w-0 flex-1 truncate caption-bold text-text-neutral-primary">
             {projectName}
           </span>
-          <IconWrapper size="s">
+          <IconWrapper size="xs">
             <ChevronsUpDown aria-hidden />
           </IconWrapper>
         </button>

@@ -82,7 +82,7 @@ export function Dropdown({
   const showLeading = leadingSlot !== null;
   const leading =
     leadingSlot === undefined ? (
-      <IconWrapper size="md">
+      <IconWrapper size="s">
         <PencilLine aria-hidden />
       </IconWrapper>
     ) : (

@@ -30,7 +30,7 @@ export const sidePanelTitleGroupClassName =
   'flex min-w-0 flex-1 flex-col gap-0.5';
 
 export const sidePanelTitleClassName =
-  'm-0 body-1-bold text-text-neutral-primary';
+  'm-0 heading-3 text-text-neutral-primary';
 
 export const sidePanelSubtitleClassName =
   'm-0 caption text-text-neutral-secondary';

@@ -18,7 +18,7 @@ export const answerPanelCaptionClassName =
   'm-0 caption text-text-neutral-secondary';
 
 export const answerPanelTitleClassName =
-  'm-0 heading-3 text-text-neutral-primary';
+  'm-0 body-1-bold text-text-neutral-primary';
 
 export const answerPanelSubtitleClassName =
   'm-0 caption text-text-neutral-secondary';

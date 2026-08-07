@@ -11,7 +11,7 @@ import { DropdownList } from '@/components/Overlay/DropdownList';
 import { ListItem } from '@/components/Overlay/ListItem';
 import { NotificationBadge } from '@/components/NotificationBadge';
 import { SegmentedControl, SegmentedControlItem } from '@/components/SegmentedControl';
-import { Tab, TabGroup } from '@/components/Tab';
+import { Tab } from '@/components/Tab';
 import {
   Archive,
   ChevronDown,
@@ -318,28 +318,30 @@ export function ConfirmationPanel({
       ) : null}
 
       <div className="flex h-[53px] shrink-0 items-center justify-between pr-2">
-        <TabGroup
+        <Tab
           value={activeTab}
           onChange={setActiveTab}
           className="min-w-0 flex-1"
           aria-label="サイドパネル"
-        >
-          <Tab
-            trailingSlot={
-              aiChatHasActivity ? <NotificationBadge /> : undefined
-            }
-          >
-            AIチャット
-          </Tab>
-          <Tab
-            trailingSlot={
-              <NotificationBadge type="neutral" count={commentCount} />
-            }
-          >
-            コメント
-          </Tab>
-          <Tab trailingSlot={<NotificationBadge />}>確認事項</Tab>
-        </TabGroup>
+          items={[
+            {
+              label: 'AIチャット',
+              trailingSlot: aiChatHasActivity ? (
+                <NotificationBadge />
+              ) : undefined,
+            },
+            {
+              label: 'コメント',
+              trailingSlot: (
+                <NotificationBadge type="neutral" count={commentCount} />
+              ),
+            },
+            {
+              label: '確認事項',
+              trailingSlot: <NotificationBadge />,
+            },
+          ]}
+        />
         <ButtonIcon
           emphasis="ghost"
           intent="default"
@@ -404,7 +406,7 @@ export function ConfirmationPanel({
                   className="pr-9"
                 />
                 <span className="pointer-events-none absolute inset-y-0 right-2 z-[2] flex items-center text-text-neutral-muted">
-                  <IconWrapper size="md">
+                  <IconWrapper size="s">
                     <Search aria-hidden />
                   </IconWrapper>
                 </span>

@@ -297,7 +297,7 @@ export const ComboboxInput = forwardRef<HTMLInputElement, ComboboxInputProps>(
 
           {!disabled ? (
             <IconWrapper
-              size="md"
+              size="s"
               className="ml-auto shrink-0 text-text-neutral-muted"
             >
               <Search aria-hidden />

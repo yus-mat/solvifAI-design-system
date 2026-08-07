@@ -39,7 +39,7 @@ export function BreadcrumbItem({
   return (
     <li className={breadcrumbItemClassName}>
       {showSeparator ? (
-        <IconWrapper size="md" className={breadcrumbSeparatorClassName}>
+        <IconWrapper size="s" className={breadcrumbSeparatorClassName}>
           <ChevronRight aria-hidden />
         </IconWrapper>
       ) : null}

@@ -71,7 +71,7 @@ function CategorySection({
         </span>
         <span className="flex size-12 shrink-0 items-center justify-center">
           <IconWrapper
-            size="s"
+            size="md"
             className={[
               'text-text-neutral-secondary transition-transform duration-150',
               open ? 'rotate-180' : 'rotate-0',

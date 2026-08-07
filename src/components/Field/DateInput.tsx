@@ -32,7 +32,7 @@ export const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
     const showIcon = icon !== null;
     const iconNode =
       icon === undefined ? (
-        <IconWrapper size="md" className="shrink-0 text-text-neutral-muted">
+        <IconWrapper size="s" className="shrink-0 text-text-neutral-muted">
           <CalendarDays aria-hidden />
         </IconWrapper>
       ) : (

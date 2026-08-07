@@ -96,7 +96,7 @@ const variantClassName: Record<ButtonEmphasis, Record<ButtonIntent, string>> = {
 /** Figma ButtonRegular: MD 48px, SM 32px, with a 4px content gap. */
 const textSizeClassName: Record<ButtonSize, string> = {
   md: 'h-12 gap-1 px-4 body-1',
-  sm: 'h-8 gap-1 px-3 body-1',
+  sm: 'h-8 gap-1 px-3 body-2',
 };
 
 const iconOnlySizeClassName: Record<ButtonSize, string> = {

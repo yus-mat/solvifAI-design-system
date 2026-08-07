@@ -79,7 +79,7 @@ const preview: Preview = {
           ['Checkbox', 'CheckboxField', 'Toggle', 'Picker', 'PickerGroup', '*'],
           'Forms',
           'Navigation',
-          ['Tab', 'TabGroup', 'SegmentedControl', '*'],
+          ['Tab', 'SegmentedControl', '*'],
           'List',
           'Overlay',
           'Pages',

@@ -1,4 +1,9 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import {
+  useId,
+  useRef,
+  type HTMLAttributes,
+  type ReactNode,
+} from 'react';
 import { ButtonIcon } from '@/components/Button';
 import { X } from '@/icons';
 import {
@@ -12,6 +17,7 @@ import {
   dialogTitleClassName,
   dialogTitleGroupClassName,
 } from './dialogStyles';
+import { useModalA11y } from './useModalA11y';
 import { useOverlayPresence } from './useOverlayPresence';
 
 export type DialogProps = {
@@ -35,25 +41,42 @@ export function Dialog({
   closeLabel = '閉じる',
   children,
   className,
+  'aria-labelledby': ariaLabelledBy,
+  'aria-describedby': ariaDescribedBy,
   ...rest
 }: DialogProps) {
   const { mounted, shown, onTransitionEnd } = useOverlayPresence(open);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
+  const labelledBy = ariaLabelledBy ?? titleId;
+
+  useModalA11y({
+    open: open && mounted,
+    onClose,
+    containerRef: panelRef,
+  });
 
   if (!mounted) return null;
 
   return (
     <div className={dialogOverlayClassName}>
       <div
+        ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-hidden={!shown}
+        tabIndex={-1}
         className={dialogClassName({ shown, className })}
         onTransitionEnd={onTransitionEnd}
         {...rest}
+        aria-hidden={!shown}
+        aria-labelledby={labelledBy}
+        aria-describedby={ariaDescribedBy}
       >
         <header className={dialogHeaderClassName}>
           <div className={dialogTitleGroupClassName}>
-            <h2 className={dialogTitleClassName}>{title}</h2>
+            <h2 id={titleId} className={dialogTitleClassName}>
+              {title}
+            </h2>
             {subtitle ? (
               <p className={dialogSubtitleClassName}>{subtitle}</p>
             ) : null}

@@ -22,7 +22,7 @@ export function pickerClassName({
   className?: string;
 } = {}) {
   return [
-    'flex w-full min-w-0 cursor-pointer items-center gap-3 rounded-lg bg-background-neutral-primary p-4 text-left',
+    'group flex w-full min-w-0 cursor-pointer items-center gap-3 rounded-lg bg-background-neutral-primary p-4 text-left',
     insetStrokeClassName(selected),
     interactiveOverlayClassName,
     focusRingOffsetClassName,
@@ -43,7 +43,13 @@ export const pickerSubtitleClassName =
 
 export const pickerLeadingClassName = 'flex shrink-0 items-center';
 
-export const pickerTrailingClassName = 'flex shrink-0 items-center text-text-action-primary';
+export const pickerTrailingClassName =
+  'flex shrink-0 items-center text-text-action-primary';
+
+/** Visible when selected; otherwise only on hover/focus-visible (matches Figma). */
+export function pickerTrailingVisibilityClassName(selected: boolean) {
+  return selected ? '' : 'hidden group-hover:flex group-focus-visible:flex';
+}
 
 export const pickerGroupClassName = 'flex w-full flex-col gap-3';
 

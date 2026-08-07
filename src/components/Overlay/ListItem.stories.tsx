@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { IconWrapper } from '@/components/IconWrapper';
 import { ChevronDown } from '@/icons';
 import { ListItem } from './ListItem';
 
@@ -42,11 +41,7 @@ export const WithoutLeadingIcon: Story = {
 export const CustomLeadingIcon: Story = {
   args: {
     children: 'ListName',
-    leadingSlot: (
-      <IconWrapper size="s" className="text-text-action-primary">
-        <ChevronDown aria-hidden />
-      </IconWrapper>
-    ),
+    leadingSlot: <ChevronDown className="text-text-action-primary" aria-hidden />,
   },
 };
 

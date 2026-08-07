@@ -44,7 +44,7 @@ export const drawerHeaderClassName = [
 export const drawerTitleGroupClassName = 'flex min-w-0 flex-1 flex-col gap-0.5';
 
 export const drawerTitleClassName =
-  'm-0 body-1-bold text-text-neutral-primary';
+  'm-0 heading-3 text-text-neutral-primary';
 
 export const drawerSubtitleClassName =
   'm-0 caption text-text-neutral-muted';

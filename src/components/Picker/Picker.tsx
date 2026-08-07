@@ -9,6 +9,7 @@ import {
   pickerSubtitleClassName,
   pickerTitleClassName,
   pickerTrailingClassName,
+  pickerTrailingVisibilityClassName,
 } from './pickerStyles';
 
 export type PickerProps = {
@@ -16,13 +17,25 @@ export type PickerProps = {
   title: ReactNode;
   subtitle?: ReactNode;
   leadingSlot?: ReactNode;
+  /**
+   * Trailing affordance (Figma Trailing slot). Defaults to a check icon.
+   * Pass `null` to hide the trailing slot entirely.
+   */
+  trailingSlot?: ReactNode | null;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'value'>;
+
+const defaultTrailingSlot = (
+  <IconWrapper size="s">
+    <Check aria-hidden />
+  </IconWrapper>
+);
 
 export function Picker({
   value,
   title,
   subtitle,
   leadingSlot,
+  trailingSlot,
   className,
   type = 'button',
   disabled,
@@ -37,6 +50,8 @@ export function Picker({
   } = usePickerGroupContext();
   const selected = selectedValue === value;
   const isDisabled = disabled ?? groupDisabled;
+  const trailing =
+    trailingSlot === undefined ? defaultTrailingSlot : trailingSlot;
 
   return (
     <button
@@ -64,11 +79,16 @@ export function Picker({
           <span className={pickerSubtitleClassName}>{subtitle}</span>
         ) : null}
       </span>
-      {selected ? (
-        <span className={pickerTrailingClassName}>
-          <IconWrapper size="xs">
-            <Check aria-hidden />
-          </IconWrapper>
+      {trailing != null ? (
+        <span
+          className={[
+            pickerTrailingClassName,
+            pickerTrailingVisibilityClassName(selected),
+          ]
+            .filter(Boolean)
+            .join(' ')}
+        >
+          {trailing}
         </span>
       ) : null}
     </button>
