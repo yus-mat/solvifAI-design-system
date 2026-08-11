@@ -9,6 +9,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build-storybook:pages": "STORYBOOK_BASE_PATH=/solvifAI-design-system/ storybook build",
+    "prebuild-storybook": "npm run tokens:build && npm run manifest:build",
     "tokens:build": "style-dictionary build --config style-dictionary.config.mjs && node scripts/generate-primitive-colors.mjs",
     "manifest:build": "node scripts/generate-manifest.mjs",
     "predev": "npm run tokens:build && npm run manifest:build",
