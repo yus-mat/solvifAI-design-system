@@ -1,6 +1,11 @@
 /**
  * Design system icons — Lucide React.
- * Import from here (not custom SVGs) for consistency across components.
+ * Import from here (not `lucide-react` directly) for a stable, curated set.
+ *
+ * Stroke weight uses Lucide’s default (relative to size / viewBox). That matches
+ * mature icon sets (Material opsz, SF Symbols optical weight, Lucide/Tabler
+ * defaults): small icons stay light; large icons don’t go hairline.
+ * Prefer `absoluteStrokeWidth` only for intentionally large display icons.
  */
 export {
   AlignEndVertical,

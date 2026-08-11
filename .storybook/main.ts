@@ -14,7 +14,10 @@ const config: StorybookConfig = {
     options: {},
   },
   async viteFinal(config) {
+    const base = process.env.STORYBOOK_BASE_PATH || '/';
+
     return mergeConfig(config, {
+      base,
       resolve: {
         alias: {
           '@': path.resolve(rootDir, '../src'),

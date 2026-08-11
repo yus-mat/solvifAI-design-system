@@ -19,6 +19,20 @@ npm run build            # Typecheck + production build
 npm run build-storybook  # Static Storybook export
 ```
 
+## Public Storybook
+
+Pushes to `master` deploy a static Storybook to GitHub Pages:
+
+**https://yus-mat.github.io/solvifAI-design-system/**
+
+One-time setup (repo admin): **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+Local build with the Pages base path:
+
+```bash
+npm run build-storybook:pages
+```
+
 ## Usage
 
 ```tsx
