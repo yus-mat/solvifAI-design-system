@@ -65,3 +65,37 @@ export const Playground: Story = {
     </div>
   ),
 };
+
+/** Matches Figma component set: document / image × default / hover (remove). */
+export const FigmaMatrix: Story = {
+  render: () => (
+    <div className="flex flex-col gap-8 p-8">
+      <div className="flex items-start gap-6">
+        <Attachment
+          fileName="営業案ブレスト結果"
+          fileExtension=".docx"
+          onRemove={() => undefined}
+        />
+        <Attachment fileName="営業案ブレスト結果" fileExtension=".docx" />
+      </div>
+      <div className="flex items-start gap-6">
+        <Attachment
+          fileName="フロー図.png"
+          fileType="image"
+          imageSrc="https://picsum.photos/seed/attachment-figma/240/160"
+          imageAlt="フロー図"
+          onRemove={() => undefined}
+        />
+        <Attachment
+          fileName="フロー図.png"
+          fileType="image"
+          imageSrc="https://picsum.photos/seed/attachment-figma/240/160"
+          imageAlt="フロー図"
+        />
+      </div>
+      <p className="caption text-text-neutral-muted">
+        Hover the left cards to reveal the remove control (Figma Hover / State4).
+      </p>
+    </div>
+  ),
+};

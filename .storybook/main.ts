@@ -5,8 +5,17 @@ import path from 'node:path';
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
+/** Page stories are for local product preview only — omit from published builds. */
+const includePages = process.env.STORYBOOK_INCLUDE_PAGES === 'true';
+
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: [
+    '../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    ...(includePages
+      ? ['../src/pages/**/*.stories.@(js|jsx|mjs|ts|tsx)']
+      : []),
+  ],
   addons: ['@storybook/addon-docs'],
   staticDirs: ['../public'],
   framework: {

@@ -55,11 +55,12 @@ function AttachmentRemoveButton({
   return (
     <div className={attachmentRemoveButtonClassName}>
       <ButtonIcon
-        emphasis="secondary"
+        emphasis="ghost"
         intent="default"
         size="sm"
         icon={<X aria-hidden />}
         aria-label={removeLabel}
+        tooltip={false}
         disabled={disabled}
         onClick={(event) => {
           event.stopPropagation();

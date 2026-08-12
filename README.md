@@ -13,10 +13,10 @@ React component library for the SOLA product, aligned with the [Figma design fil
 
 ```bash
 npm run dev              # Vite dev server
-npm run storybook        # Component docs (port 6006)
+npm run storybook        # Component docs + page previews (port 6006)
 npm run tokens:build     # Regenerate CSS from tokens
 npm run build            # Typecheck + production build
-npm run build-storybook  # Static Storybook export
+npm run build-storybook  # Static Storybook (components only; no Pages)
 ```
 
 ## Public Storybook
@@ -26,6 +26,8 @@ Pushes to `master` deploy a static Storybook to GitHub Pages:
 **https://yus-mat.github.io/solvifAI-design-system/**
 
 One-time setup (repo admin): **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+Local `npm run storybook` includes **Pages** (product screen previews). Published builds omit them — keep page stories in the repo for your own preview, don’t delete.
 
 Local build with the Pages base path:
 

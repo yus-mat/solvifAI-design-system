@@ -82,6 +82,7 @@ const preview: Preview = {
           ['Tab', 'SegmentedControl', '*'],
           'List',
           'Overlay',
+          // Local-only when STORYBOOK_INCLUDE_PAGES=true
           'Pages',
           ['成果物生成v2', 'ドラフト画面', '*'],
         ],
