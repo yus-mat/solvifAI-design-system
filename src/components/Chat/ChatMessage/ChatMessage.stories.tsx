@@ -51,6 +51,8 @@ export const Playground: Story = {
       timestamp={timestamp}
       onThumbsUp={type === 'ai' ? () => undefined : undefined}
       onThumbsDown={type === 'ai' ? () => undefined : undefined}
+      onCopy={type === 'user' ? () => undefined : undefined}
+      onRefresh={type === 'user' ? () => undefined : undefined}
       onEdit={type === 'user' ? () => undefined : undefined}
       attachment={
         withAttachment && type === 'user' ? (

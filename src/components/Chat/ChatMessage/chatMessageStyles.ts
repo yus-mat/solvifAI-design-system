@@ -43,10 +43,13 @@ export const chatMessageAttachmentRowClassName =
   'flex items-end';
 
 export const chatMessageActionsClassName = [
-  'absolute top-full mt-1 flex items-center gap-1',
+  'absolute top-full mt-1 flex items-center gap-2',
   'opacity-0 transition-opacity duration-150',
   'group-hover:opacity-100 group-focus-within:opacity-100',
 ].join(' ');
+
+export const chatMessageActionGroupClassName =
+  'flex items-center gap-0.5';
 
 export function chatMessageActionsAlignmentClassName(type: ChatMessageType = 'ai') {
   return type === 'user' ? 'right-0' : 'left-0';
