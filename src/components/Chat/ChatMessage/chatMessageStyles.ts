@@ -10,8 +10,11 @@ export function chatMessageClassName({
   className?: string;
 } = {}) {
   return [
-    'group relative flex w-full flex-col gap-0',
-    editing ? 'mb-10' : 'mb-8',
+    // 56px between messages — the hover action row sits inside this margin, so a
+    // tighter gap makes it crowd the next message. +8px more while editing for
+    // the cancel/save action row.
+    'group/message relative flex w-full flex-col gap-0 px-0.5',
+    editing ? 'mb-16' : 'mb-14',
     type === 'user' ? 'items-end' : 'items-start',
     className,
   ]
@@ -48,7 +51,7 @@ export const chatMessageAttachmentRowClassName =
 export const chatMessageActionsClassName = [
   'absolute top-full mt-1 flex items-center gap-2',
   'opacity-0 transition-opacity duration-150',
-  'group-hover:opacity-100 group-focus-within:opacity-100',
+  'group-hover/message:opacity-100 group-focus-within/message:opacity-100',
 ].join(' ');
 
 export const chatMessageActionGroupClassName =
