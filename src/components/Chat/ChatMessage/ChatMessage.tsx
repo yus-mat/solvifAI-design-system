@@ -1,7 +1,16 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import {
+  isValidElement,
+  useEffect,
+  useRef,
+  useState,
+  type HTMLAttributes,
+  type ReactNode,
+} from 'react';
 import { Avatar } from '@/components/Avatar';
-import { ButtonIcon } from '@/components/Button';
+import { Button, ButtonIcon } from '@/components/Button';
+import { chatTextClassName } from '@/components/Chat/ChatText/chatTextStyles';
 import { Copy, PencilLine, RotateCw, ThumbsDown, ThumbsUp } from '@/icons';
+import { focusOutlineSuppressClassName } from '@/styles/focusRing';
 import { CHAT_AI_AVATAR_ALT, CHAT_AI_AVATAR_SRC } from '../chatConstants';
 import type { ChatMessageType } from './chatMessageTypes';
 import {
@@ -13,6 +22,7 @@ import {
   chatMessageContentAlignmentClassName,
   chatMessageContentClassName,
   chatMessageContentColumnClassName,
+  chatMessageEditingActionsClassName,
   chatMessageMessageRowClassName,
   chatMessageRowClassName,
   chatMessageUserBodyClassName,
@@ -31,7 +41,28 @@ export type ChatMessageProps = {
   onCopy?: () => void;
   onRefresh?: () => void;
   onEdit?: () => void;
+  editing?: boolean;
+  defaultEditing?: boolean;
+  onEditingChange?: (editing: boolean) => void;
+  editValue?: string;
+  defaultEditValue?: string;
+  onEditValueChange?: (value: string) => void;
+  onSave?: (value: string) => void;
+  onCancel?: () => void;
 } & Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'type'>;
+
+function textFromNode(node: ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') {
+    return String(node);
+  }
+  if (Array.isArray(node)) {
+    return node.map(textFromNode).join('');
+  }
+  if (isValidElement<{ children?: ReactNode }>(node)) {
+    return textFromNode(node.props.children);
+  }
+  return '';
+}
 
 function ChatMessageActionButton({
   icon,
@@ -132,17 +163,8 @@ function ChatMessageActions({
         chatMessageActionsAlignmentClassName(type),
       ].join(' ')}
     >
-      {type === 'ai' ? (
-        <>
-          {timestampNode}
-          {actionGroup}
-        </>
-      ) : (
-        <>
-          {actionGroup}
-          {timestampNode}
-        </>
-      )}
+      {actionGroup}
+      {timestampNode}
     </div>
   );
 }
@@ -158,9 +180,64 @@ export function ChatMessage({
   onCopy,
   onRefresh,
   onEdit,
+  editing: editingProp,
+  defaultEditing = false,
+  onEditingChange,
+  editValue,
+  defaultEditValue,
+  onEditValueChange,
+  onSave,
+  onCancel,
   className,
 }: ChatMessageProps) {
-  const actions = (
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const messageText = defaultEditValue ?? textFromNode(children);
+
+  const isEditingControlled = editingProp !== undefined;
+  const [uncontrolledEditing, setUncontrolledEditing] = useState(defaultEditing);
+  const isEditing = type === 'user' && (isEditingControlled ? editingProp : uncontrolledEditing);
+
+  const isValueControlled = editValue !== undefined;
+  const [uncontrolledValue, setUncontrolledValue] = useState(messageText);
+  const value = isValueControlled ? editValue : uncontrolledValue;
+
+  const setEditing = (next: boolean) => {
+    if (!isEditingControlled) setUncontrolledEditing(next);
+    onEditingChange?.(next);
+  };
+
+  const setValue = (next: string) => {
+    if (!isValueControlled) setUncontrolledValue(next);
+    onEditValueChange?.(next);
+  };
+
+  const canEdit =
+    type === 'user' &&
+    Boolean(onEdit || onSave || onEditingChange || editingProp !== undefined);
+
+  const handleEdit = () => {
+    if (!isValueControlled) setUncontrolledValue(messageText);
+    onEdit?.();
+    setEditing(true);
+  };
+
+  const handleCancel = () => {
+    if (!isValueControlled) setUncontrolledValue(messageText);
+    onCancel?.();
+    setEditing(false);
+  };
+
+  const handleSave = () => {
+    onSave?.(value);
+    setEditing(false);
+  };
+
+  useEffect(() => {
+    if (!isEditing) return;
+    textareaRef.current?.focus();
+  }, [isEditing]);
+
+  const hoverActions = isEditing ? null : (
     <ChatMessageActions
       type={type}
       timestamp={timestamp}
@@ -168,13 +245,29 @@ export function ChatMessage({
       onThumbsDown={onThumbsDown}
       onCopy={onCopy}
       onRefresh={onRefresh}
-      onEdit={onEdit}
+      onEdit={canEdit ? handleEdit : undefined}
     />
   );
 
+  const editingActions = isEditing ? (
+    <div className={chatMessageEditingActionsClassName}>
+      <Button
+        emphasis="ghost"
+        size="sm"
+        className="text-text-action-primary"
+        onClick={handleCancel}
+      >
+        キャンセル
+      </Button>
+      <Button emphasis="primary" size="sm" onClick={handleSave}>
+        保存
+      </Button>
+    </div>
+  ) : null;
+
   if (type === 'user') {
     return (
-      <div className={chatMessageClassName({ type, className })}>
+      <div className={chatMessageClassName({ type, editing: isEditing, className })}>
         <div className={chatMessageMessageRowClassName}>
           <div
             className={[
@@ -188,8 +281,33 @@ export function ChatMessage({
               </div>
             ) : null}
             <div className="relative">
-              {children}
-              {actions}
+              {isEditing ? (
+                <textarea
+                  ref={textareaRef}
+                  aria-label="メッセージを編集"
+                  className={[
+                    chatTextClassName({ variant: 'user-editing' }),
+                    'w-full min-h-[72px] resize-none bg-transparent',
+                    focusOutlineSuppressClassName,
+                  ].join(' ')}
+                  value={value}
+                  onChange={(event) => setValue(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Escape') {
+                      event.preventDefault();
+                      handleCancel();
+                    }
+                    if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
+                      event.preventDefault();
+                      handleSave();
+                    }
+                  }}
+                />
+              ) : (
+                children
+              )}
+              {hoverActions}
+              {editingActions}
             </div>
           </div>
         </div>
@@ -220,7 +338,7 @@ export function ChatMessage({
             ) : null}
             {children}
           </div>
-          {actions}
+          {hoverActions}
         </div>
       </div>
     </div>

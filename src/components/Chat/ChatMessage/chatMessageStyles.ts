@@ -2,13 +2,16 @@ import type { ChatMessageType } from './chatMessageTypes';
 
 export function chatMessageClassName({
   type = 'ai',
+  editing = false,
   className,
 }: {
   type?: ChatMessageType;
+  editing?: boolean;
   className?: string;
 } = {}) {
   return [
-    'group relative mb-8 flex w-full flex-col gap-0 px-0.5',
+    'group relative flex w-full flex-col gap-0',
+    editing ? 'mb-10' : 'mb-8',
     type === 'user' ? 'items-end' : 'items-start',
     className,
   ]
@@ -50,6 +53,9 @@ export const chatMessageActionsClassName = [
 
 export const chatMessageActionGroupClassName =
   'flex items-center gap-0.5';
+
+export const chatMessageEditingActionsClassName =
+  'absolute top-full mt-1 flex items-center justify-end gap-0.5';
 
 export function chatMessageActionsAlignmentClassName(type: ChatMessageType = 'ai') {
   return type === 'user' ? 'right-0' : 'left-0';

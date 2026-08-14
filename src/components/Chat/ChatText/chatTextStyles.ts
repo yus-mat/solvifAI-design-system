@@ -8,6 +8,13 @@ const variantClassNames: Record<ChatTextVariant, string> = {
     'max-h-[200px] max-w-[580px] overflow-hidden',
     'rounded-xl',
     'bg-background-function-info-base',
+    'px-4 py-3',
+  ].join(' '),
+  'user-editing': [
+    'max-h-[200px] max-w-[580px] overflow-auto',
+    'rounded-xl',
+    'bg-background-neutral-primary',
+    'border border-border-function-info',
     'px-4 py-3 shadow-sm',
   ].join(' '),
 };

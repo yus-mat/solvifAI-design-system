@@ -18,7 +18,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'radio',
-      options: ['ai', 'ai-thinking', 'user'] satisfies ChatTextVariant[],
+      options: ['ai', 'ai-thinking', 'user', 'user-editing'] satisfies ChatTextVariant[],
     },
     children: { control: 'text' },
     truncated: { control: 'boolean' },

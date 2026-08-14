@@ -1,1 +1,1 @@
-export type ChatTextVariant = 'ai' | 'ai-thinking' | 'user';
+export type ChatTextVariant = 'ai' | 'ai-thinking' | 'user' | 'user-editing';

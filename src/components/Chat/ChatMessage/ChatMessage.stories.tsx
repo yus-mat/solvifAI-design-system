@@ -53,7 +53,8 @@ export const Playground: Story = {
       onThumbsDown={type === 'ai' ? () => undefined : undefined}
       onCopy={type === 'user' ? () => undefined : undefined}
       onRefresh={type === 'user' ? () => undefined : undefined}
-      onEdit={type === 'user' ? () => undefined : undefined}
+      onSave={type === 'user' ? () => undefined : undefined}
+      defaultEditValue={message}
       attachment={
         withAttachment && type === 'user' ? (
           <Attachment fileName="営業案ブレスト結果" fileExtension=".docx" />
@@ -69,6 +70,24 @@ export const AiThinking: Story = {
   render: () => (
     <ChatMessage type="ai">
       <ChatText variant="ai-thinking">考えています...</ChatText>
+    </ChatMessage>
+  ),
+};
+
+export const UserEditing: Story = {
+  args: {
+    type: 'user',
+    message: sampleText,
+  },
+  render: ({ message }) => (
+    <ChatMessage
+      type="user"
+      defaultEditing
+      defaultEditValue={message}
+      onSave={() => undefined}
+      onCancel={() => undefined}
+    >
+      <ChatText variant="user">{message}</ChatText>
     </ChatMessage>
   ),
 };
