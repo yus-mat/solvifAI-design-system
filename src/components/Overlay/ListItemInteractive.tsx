@@ -1,8 +1,11 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { IconWrapper } from '@/components/IconWrapper';
 import { listItemInteractiveClassName } from './overlayStyles';
 
 export type ListItemInteractiveProps = {
+  /** Icon content — wrapped in `IconWrapper` size `s` to pair with the body-2 label. */
   leadingSlot?: ReactNode | null;
+  /** Free-form content (text, tags) — rendered as-is, not icon-sized. */
   trailingSlot?: ReactNode | null;
   hasBorder?: boolean;
   selected?: boolean;
@@ -37,9 +40,7 @@ export const ListItemInteractive = forwardRef<
       })}
       {...rest}
     >
-      {leadingSlot ? (
-        <span className="flex shrink-0 items-center">{leadingSlot}</span>
-      ) : null}
+      {leadingSlot ? <IconWrapper size="s">{leadingSlot}</IconWrapper> : null}
       <span className="min-w-0 flex-1 truncate body-2 text-foreground">
         {children}
       </span>

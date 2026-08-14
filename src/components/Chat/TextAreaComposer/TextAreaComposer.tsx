@@ -46,6 +46,11 @@ export type TextAreaComposerProps = {
    * When omitted, the built-in ButtonIcon row is rendered at `actionSize`.
    */
   actions?: ReactNode;
+  /**
+   * Extra controls placed beside the attach button in the default action bar.
+   * Only rendered when `actions` is omitted — has no effect if `actions` is set.
+   */
+  leadingActions?: ReactNode;
   /** Custom attachment slot — ignored when `attachment` is set. */
   attachments?: ReactNode;
   attachment?: TextAreaComposerAttachment | null;
@@ -74,6 +79,7 @@ export function TextAreaComposer({
   rounded = true,
   actionSize = 'md',
   actions,
+  leadingActions,
   attachments,
   attachment: attachmentProp,
   defaultAttachment = null,
@@ -161,15 +167,18 @@ export function TextAreaComposer({
 
   const defaultActions = (
     <>
-      <ButtonIcon
-        emphasis="ghost"
-        intent="default"
-        size={actionSize}
-        icon={<Plus aria-hidden />}
-        aria-label="ファイルを添付"
-        disabled={disabled}
-        onClick={handleAttachClick}
-      />
+      <div className={textAreaComposerTrailingActionsClassName}>
+        <ButtonIcon
+          emphasis="ghost"
+          intent="default"
+          size={actionSize}
+          icon={<Plus aria-hidden />}
+          aria-label="ファイルを添付"
+          disabled={disabled}
+          onClick={handleAttachClick}
+        />
+        {leadingActions}
+      </div>
       <div className={textAreaComposerTrailingActionsClassName}>
         <ButtonIcon
           emphasis="ghost"

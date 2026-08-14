@@ -1,13 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { IconWrapper } from '@/components/IconWrapper';
 import { PencilLine } from '@/icons';
 import { ListItemInteractive } from './ListItemInteractive';
 
-const leadingIcon = (
-  <IconWrapper size="s">
-    <PencilLine aria-hidden />
-  </IconWrapper>
-);
+const leadingIcon = <PencilLine aria-hidden />;
 
 const meta = {
   title: 'List/ListItemInteractive',

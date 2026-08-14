@@ -44,8 +44,6 @@ function DialogDemo({
         ボタンを押すとダイアログがフェードインします。背景をクリックするか、閉じるボタンで閉じられます。
       </p>
 
-      <Backdrop open={open} onClick={() => setOpen(false)} />
-
       <Dialog
         {...dialogProps}
         open={open}

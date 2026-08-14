@@ -22,7 +22,7 @@ export function attachmentRootClassName({
   className?: string;
 } = {}) {
   return [
-    'group relative isolate max-h-20 max-w-[120px]',
+    'group/attachment relative isolate max-h-20 max-w-[120px]',
     'rounded-md border-[0.5px] border-border-neutral-muted shadow-sm',
     'transition-[box-shadow,opacity] duration-150',
     fileType === 'image'
@@ -59,6 +59,6 @@ export const attachmentImageClassName =
 export const attachmentRemoveButtonClassName = [
   'absolute -right-3.5 -top-[22px] z-[3]',
   'opacity-0 transition-opacity duration-150',
-  'group-hover:opacity-100 group-focus-within:opacity-100',
+  'group-hover/attachment:opacity-100 group-focus-within/attachment:opacity-100',
   'focus-within:opacity-100',
 ].join(' ');

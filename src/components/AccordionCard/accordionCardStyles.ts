@@ -15,7 +15,7 @@ const accordionCardShadowSm = 'shadow-[var(--shadow-sm)]';
 const accordionCardShadowMd = 'shadow-[var(--shadow-md)]';
 
 const accordionCardShadowMdOnHover =
-  'group-hover:shadow-[var(--shadow-md)]';
+  'group-hover/accordion:shadow-[var(--shadow-md)]';
 
 const sizeClassNames: Record<AccordionCardSize, string> = {
   sm: 'p-2',
@@ -46,7 +46,7 @@ export function accordionCardClassName({
   className?: string;
 } = {}) {
   return [
-    'group w-full rounded-xl border-[0.5px] border-border-neutral-muted bg-surface-raise',
+    'group/accordion w-full rounded-xl border-[0.5px] border-border-neutral-muted bg-surface-raise',
     'transition-shadow duration-150',
     expandable && !disabled && focusRingOnDirectButtonClassName,
     disabled

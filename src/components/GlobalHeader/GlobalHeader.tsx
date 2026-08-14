@@ -20,6 +20,8 @@ export type GlobalHeaderProps = {
   onBack?: () => void;
   onPrimaryAction?: () => void;
   trailingSlot?: ReactNode;
+  /** Content beside the logo (e.g. a project switcher). Ignored in the `draft` variant. */
+  leadingSlot?: ReactNode;
 } & Omit<HTMLAttributes<HTMLElement>, 'children' | 'title'>;
 
 export function GlobalHeader({
@@ -32,6 +34,7 @@ export function GlobalHeader({
   onBack,
   onPrimaryAction,
   trailingSlot,
+  leadingSlot,
   className,
   ...rest
 }: GlobalHeaderProps) {
@@ -46,12 +49,13 @@ export function GlobalHeader({
           .join(' ')}
         {...rest}
       >
-        <div className="flex h-[52px] items-center gap-3 px-3">
+        <div className="flex h-[52px] min-w-0 items-center gap-3 px-3">
           <img
             src="/brand/solvifai-logo.png"
             alt="SolvifAI"
             className="h-[27px] w-auto object-contain"
           />
+          {leadingSlot}
         </div>
         {trailingSlot}
       </header>
