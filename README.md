@@ -73,6 +73,24 @@ Then **restart** `npm run dev` or `npm run storybook` — don't run `npm run man
 
 A dev server left running from before the pull will **not** pick up the update on its own — it has to be stopped and started again.
 
+## Protecting the source of truth in downstream clones
+
+If you clone this repo again to build product features on top of it (e.g. a `solvifAI-features` folder), that clone is **the same repository** — every component file is just as present and editable there as it is here. Nothing about being "a features clone" is enforced by git on its own.
+
+To make that boundary real rather than just a convention, mark a clone as downstream once:
+
+```bash
+npm run setup:downstream-clone
+```
+
+This creates a few local, gitignored files (never synced by `git pull`/`git push`, so `solvifAI-design-system` itself is unaffected no matter how many clones run this):
+
+- `.design-system-role` — a marker read by a pre-commit hook
+- `CLAUDE.local.md` / `.cursor/rules/no-component-edits.local.mdc` — tells Claude Code / Cursor not to edit design-system-owned paths, and to flag a gap instead of working around it
+- an installed `git` pre-commit hook that **hard-blocks** any commit touching `src/components/`, `tokens/`, `src/styles/theme.css`, `src/styles/global.css`, `src/icons/`, `src/stories/`, or `.storybook/` in that clone
+
+If a feature genuinely needs a component change, make it here in `solvifAI-design-system`, push it, then `git pull` it into the downstream clone — don't edit the component from the downstream side.
+
 ## Code Connect
 
 `figma.config.json` is ready for Figma Code Connect mappings (`.figma.ts` files alongside components). Publishing mappings requires components to be published to a Figma team library and a Figma Organization or Enterprise plan with Code Connect enabled.

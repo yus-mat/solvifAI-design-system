@@ -15,7 +15,9 @@
     "manifest:build": "node scripts/generate-manifest.mjs",
     "predev": "npm run tokens:build && npm run manifest:build",
     "prebuild": "npm run tokens:build && npm run manifest:build",
-    "prestorybook": "npm run tokens:build && npm run manifest:build"
+    "prestorybook": "npm run tokens:build && npm run manifest:build",
+    "postinstall": "node scripts/install-git-hooks.mjs",
+    "setup:downstream-clone": "node scripts/setup-downstream-clone.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",

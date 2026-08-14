@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MARKER_FILE=".design-system-role"
+
+# Only enforce in clones explicitly marked as downstream (feature) clones.
+# solvifAI-design-system itself never has this marker, so this hook is a
+# harmless no-op there.
+if [ ! -f "$MARKER_FILE" ] || [ "$(cat "$MARKER_FILE")" != "downstream" ]; then
+  exit 0
+fi
+
+PROTECTED_PATTERN='^(src/components/|tokens/|src/styles/theme\.css$|src/styles/global\.css$|src/icons/|src/stories/|\.storybook/)'
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACMR)
+BLOCKED=$(printf '%s\n' "$STAGED" | grep -E "$PROTECTED_PATTERN" || true)
+
+if [ -n "$BLOCKED" ]; then
+  echo ""
+  echo "Commit blocked - this clone is marked as a downstream (features) clone."
+  echo "The design system source of truth is solvifAI-design-system, not this folder."
+  echo ""
+  echo "Staged files that belong to the design system, not a feature:"
+  printf '%s\n' "$BLOCKED" | sed 's/^/  - /'
+  echo ""
+  echo "What to do instead:"
+  echo "  1. Unstage these files here:  git restore --staged <file>"
+  echo "  2. Make the same change in solvifAI-design-system, commit, and push it there"
+  echo "  3. Come back here and run:    git pull && npm install"
+  echo ""
+  echo "Flag template to report the gap:"
+  echo "  ---"
+  echo "  Component build gap"
+  echo "  Component: <name>"
+  echo "  What's missing: <prop/slot/variant/state>"
+  echo "  Needed for: <feature/page>"
+  echo "  ---"
+  echo ""
+  echo "(Only if this really is intentional design-system work happening from the"
+  echo "wrong folder: git commit --no-verify)"
+  echo ""
+  exit 1
+fi
+
+exit 0
