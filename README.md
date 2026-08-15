@@ -37,15 +37,23 @@ npm run build-storybook:pages
 
 ## Usage
 
+This repo is a real, installable package — `npm install github:yus-mat/solvifAI-design-system` in any consumer project, then:
+
 ```tsx
-import { Button } from '@/components/Button';
-import { InfoBlock } from '@/components/InfoBlock';
-import { Tag } from '@/components/Tag';
-// or from the package root barrel:
-import { Button, InfoBlock, Tag } from '@/index';
+import { Button, InfoBlock, Tag } from '@sola/design-system';
+```
+
+Once, in the consumer's own CSS entry point:
+
+```css
+@import 'tailwindcss';
+@import '@sola/design-system/theme.css';  /* raw tokens, for your own theme-derived utility classes */
+@import '@sola/design-system/style.css';  /* precompiled component styles */
 ```
 
 Components use semantic tokens via `data-theme="light" | "dark"` on `<html>`.
+
+`npm install github:...` runs this repo's own `prepare` script (`npm run build:lib`) to produce `dist/` fresh — nothing built is committed to git. Building the package requires the full local toolchain (Vite, TypeScript, Tailwind, Style Dictionary), so consumer installs are heavier than a registry package would be; that's expected for now.
 
 ## AI-assisted prototyping (Claude Code)
 
@@ -73,23 +81,13 @@ Then **restart** `npm run dev` or `npm run storybook` — don't run `npm run man
 
 A dev server left running from before the pull will **not** pick up the update on its own — it has to be stopped and started again.
 
-## Protecting the source of truth in downstream clones
+## Product apps consuming this package
 
-If you clone this repo again to build product features on top of it (e.g. a `solvifAI-features` folder), that clone is **the same repository** — every component file is just as present and editable there as it is here. Nothing about being "a features clone" is enforced by git on its own.
+Product repos (e.g. `solvifAI-features`) install this as a real npm dependency rather than cloning it — see [Usage](#usage). That's a deliberate fix: this repo and `solvifAI-features` used to both be full git clones of the same source, which meant component code was just as editable from the product side as it was here, and caused real incidents (accidental component edits, merge conflicts on shared files). Installing as a package removes that entirely — there's no component source physically present in a consumer to edit by accident.
 
-To make that boundary real rather than just a convention, mark a clone as downstream once:
+If a product app needs a component change (missing prop, slot, variant, size, or state), make the change here, push it, then `npm update @sola/design-system` (or bump the dependency) in the consumer — don't fork or patch the compiled package.
 
-```bash
-npm run setup:downstream-clone
-```
-
-This creates a few local, gitignored files (never synced by `git pull`/`git push`, so `solvifAI-design-system` itself is unaffected no matter how many clones run this):
-
-- `.design-system-role` — a marker read by a pre-commit hook
-- `CLAUDE.local.md` / `.cursor/rules/no-component-edits.local.mdc` — tells Claude Code / Cursor not to edit design-system-owned paths, and to flag a gap instead of working around it
-- an installed `git` pre-commit hook that **hard-blocks** any commit touching `src/components/`, `tokens/`, `src/styles/theme.css`, `src/styles/global.css`, `src/icons/`, `src/stories/`, or `.storybook/` in that clone
-
-If a feature genuinely needs a component change, make it here in `solvifAI-design-system`, push it, then `git pull` it into the downstream clone — don't edit the component from the downstream side.
+The AI-assisted prototyping setup above (MCP server + manifest) travels with the package too — `dist/mcp-server.mjs` and `dist/manifest.json` ship inside it, so a consumer's own `.mcp.json` points at `node_modules/@sola/design-system/dist/mcp-server.mjs` and gets the same prompting workflow without needing this repo cloned locally.
 
 ## Code Connect
 

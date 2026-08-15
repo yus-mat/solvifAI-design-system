@@ -1,0 +1,9 @@
+@import 'tailwindcss' source(none);
+@source '../components';
+@source '../icons';
+
+@import './generated/primitives.css';
+@import './generated/shadows.css';
+@import './generated/semantic-light.css';
+@import './generated/semantic-dark.css';
+@import './theme.css';

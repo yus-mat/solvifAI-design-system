@@ -1,19 +1,23 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 
-const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const manifestPath = path.join(rootDir, 'src/generated/manifest.json');
+const selfDir = path.dirname(fileURLToPath(import.meta.url));
+const manifestCandidates = [
+  path.join(selfDir, 'manifest.json'), // dist/ (built/installed package)
+  path.join(selfDir, '../src/generated/manifest.json'), // local repo dev
+];
+const manifestPath = manifestCandidates.find(existsSync) ?? manifestCandidates[0];
 
 function loadManifest() {
   try {
     return JSON.parse(readFileSync(manifestPath, 'utf-8'));
   } catch {
     throw new Error(
-      `Manifest not found at ${path.relative(rootDir, manifestPath)}. Run "npm run manifest:build" (or "npm run storybook"/"npm run dev") in the design system repo first.`,
+      `Manifest not found at ${manifestPath}. Run "npm run manifest:build" (or "npm run build:lib") in the design system repo first.`,
     );
   }
 }

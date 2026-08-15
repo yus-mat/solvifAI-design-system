@@ -1,11 +1,6 @@
 node_modules/
 dist/
+dist-app/
 storybook-static/
 src/styles/generated/
 src/generated/
-
-# Per-clone downstream-guardrail setup (scripts/setup-downstream-clone.mjs) -
-# intentionally never synced between clones, see README.
-.design-system-role
-CLAUDE.local.md
-.cursor/rules/*.local.mdc

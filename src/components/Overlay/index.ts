@@ -27,6 +27,15 @@ export type { TooltipProps, TooltipPosition, TooltipTriggerProps } from './Toolt
 
 export { SnackBar } from './SnackBar';
 export type { SnackBarProps, SnackBarType } from './SnackBar';
+export {
+  snackBarClassName,
+  snackBarContentClassName,
+  snackBarTitleClassName,
+  snackBarSubtitleClassName,
+  snackBarIconClassName,
+  snackBarViewportClassName,
+  snackBarBottomCenterViewportClassName,
+} from './SnackBar/snackBarStyles';
 
 export { SidePanel } from './SidePanel';
 export type { SidePanelProps } from './SidePanel';

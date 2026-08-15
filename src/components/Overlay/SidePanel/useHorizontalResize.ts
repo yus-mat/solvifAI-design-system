@@ -1,5 +1,5 @@
-// Duplicated at src/components/Overlay/SidePanel/useHorizontalResize.ts so the
-// component package is self-contained — keep both in sync if this changes.
+// Intentional duplicate of src/hooks/useHorizontalResize.ts — components must be
+// self-contained for the package build; src/pages also imports the original directly.
 import {
   useCallback,
   useEffect,

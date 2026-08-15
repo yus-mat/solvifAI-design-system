@@ -13,4 +13,9 @@ export default defineConfig({
       '@': path.resolve(rootDir, 'src'),
     },
   },
+  build: {
+    // `dist/` is reserved for the library build (vite.lib.config.ts, npm
+    // run build:lib) — this app build must not share/clobber it.
+    outDir: 'dist-app',
+  },
 });

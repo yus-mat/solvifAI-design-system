@@ -1,10 +1,27 @@
 {
-  "name": "solvifai-v2",
-  "private": true,
+  "name": "@sola/design-system",
+  "version": "0.1.0",
+  "private": false,
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./theme.css": "./dist/theme.css",
+    "./manifest.json": "./dist/manifest.json",
+    "./mcp-server.mjs": "./dist/mcp-server.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:lib": "npm run tokens:build && npm run manifest:build && vite build --config vite.lib.config.ts && node scripts/build-lib-extras.mjs",
     "preview": "vite preview",
     "storybook": "STORYBOOK_INCLUDE_PAGES=true storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -16,14 +33,15 @@
     "predev": "npm run tokens:build && npm run manifest:build",
     "prebuild": "npm run tokens:build && npm run manifest:build",
     "prestorybook": "npm run tokens:build && npm run manifest:build",
-    "postinstall": "node scripts/install-git-hooks.mjs",
-    "setup:downstream-clone": "node scripts/setup-downstream-clone.mjs"
+    "prepare": "npm run build:lib"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
     "lucide-react": "^1.17.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "react-router-dom": "^7.18.1",
     "zod": "^4.4.3"
   },
@@ -35,11 +53,14 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-docgen-typescript": "^2.4.0",
     "storybook": "10.4.6",
     "style-dictionary": "^4.3.0",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^5.0.3"
   }
 }
