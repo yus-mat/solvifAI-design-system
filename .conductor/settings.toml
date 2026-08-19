@@ -1,0 +1,7 @@
+"$schema" = "https://conductor.build/schemas/settings.repo.schema.json"
+
+[scripts.run.storybook]
+available_in = ["local"]
+command = "STORYBOOK_PORT=$CONDUCTOR_PORT npm run storybook"
+default = true
+icon = "book-open"
