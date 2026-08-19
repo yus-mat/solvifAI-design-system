@@ -5,6 +5,13 @@ export type {
   CheckboxProps,
 } from './Checkbox';
 
+export { RadioButton, RadioButtonField } from './RadioButton';
+export type {
+  RadioButtonFieldProps,
+  RadioButtonLabelPosition,
+  RadioButtonProps,
+} from './RadioButton';
+
 export { Toggle } from './Toggle';
 export type { ToggleProps } from './Toggle';
 
