@@ -31,7 +31,7 @@ export type InfoBlockProps = {
   title: ReactNode;
   subtitle?: ReactNode;
   leadingIcon?: ReactNode | null;
-  /** Renders a Toggle in the header trailing slot when true (Figma `showToggle`). */
+  /** Renders a Toggle below the title/subtitle block when true (Figma `showToggle`). */
   showToggle?: boolean;
   toggleChecked?: boolean;
   defaultToggleChecked?: boolean;
@@ -90,16 +90,7 @@ export function InfoBlock({
       ? null
       : (leadingIcon ?? defaultIcons[type]);
 
-  const trailingSlot =
-    trailing ??
-    (showToggle ? (
-      <Toggle
-        checked={toggleChecked}
-        defaultChecked={defaultToggleChecked}
-        onCheckedChange={onToggleChange}
-        aria-label={toggleLabel}
-      />
-    ) : null);
+  const trailingSlot = trailing ?? null;
 
   const actionsSlot =
     actions ??
@@ -113,7 +104,7 @@ export function InfoBlock({
     <div className={infoBlockClassName({ type, className })} {...rest}>
       <div className={infoBlockContentRowClassName}>
         {icon ? (
-          <IconWrapper size="s" iconClassName={infoBlockIconInnerClassName(type)}>
+          <IconWrapper size="md" iconClassName={infoBlockIconInnerClassName(type)}>
             {icon}
           </IconWrapper>
         ) : null}
@@ -129,6 +120,14 @@ export function InfoBlock({
               <div className={infoBlockTrailingClassName}>{trailingSlot}</div>
             ) : null}
           </div>
+          {showToggle ? (
+            <Toggle
+              checked={toggleChecked}
+              defaultChecked={defaultToggleChecked}
+              onCheckedChange={onToggleChange}
+              aria-label={toggleLabel}
+            />
+          ) : null}
           {children}
           {actionsSlot ? (
             <div className={infoBlockActionsClassName}>{actionsSlot}</div>
