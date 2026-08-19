@@ -50,10 +50,10 @@ export const infoBlockHeaderRowClassName =
 export const infoBlockTitlesClassName = 'flex min-w-0 flex-1 flex-col gap-2';
 
 export const infoBlockTitleClassName =
-  'm-0 body-2-bold text-text-neutral-primary';
+  'm-0 body-1-bold text-text-neutral-primary';
 
 export const infoBlockSubtitleClassName =
-  'm-0 caption text-text-neutral-primary';
+  'm-0 body-2 text-text-neutral-primary';
 
 export const infoBlockActionsClassName = 'flex flex-col items-start gap-2';
 
