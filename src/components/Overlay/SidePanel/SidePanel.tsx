@@ -214,6 +214,7 @@ export function SidePanel({
                 size="md"
                 icon={<X aria-hidden />}
                 aria-label={closeLabel}
+                tooltipShowOnFocus={false}
                 onClick={onClose}
               />
             ) : null}

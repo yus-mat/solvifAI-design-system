@@ -117,6 +117,7 @@ export function AnswerPanel({
                 icon={<X aria-hidden />}
                 aria-label={closeLabel}
                 tooltipPosition="bottom-right"
+                tooltipShowOnFocus={false}
                 onClick={onClose}
               />
             ) : null}

@@ -40,6 +40,7 @@ export function Popover({
             icon={<X aria-hidden />}
             className={popoverCloseButtonClassName}
             aria-label={closeLabel}
+            tooltipShowOnFocus={false}
             onClick={onClose}
           />
         ) : null}
