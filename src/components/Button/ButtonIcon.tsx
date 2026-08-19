@@ -14,6 +14,11 @@ export type ButtonIconProps = {
   /** Hover/focus tooltip. Defaults to `aria-label` when omitted. Pass `false` to disable. */
   tooltip?: ReactNode | false;
   /**
+   * When false, the tooltip shows on hover only (not on focus).
+   * Use when the control may receive programmatic focus.
+   */
+  tooltipShowOnFocus?: boolean;
+  /**
    * Tooltip placement. Prefer `top-*` / `bottom-*`.
    * Near the right edge of the viewport/panel, use `bottom-right` or `top-right`
    * so the body grows left and is not clipped.
@@ -28,6 +33,7 @@ export function ButtonIcon({
   size = 'md',
   icon,
   tooltip,
+  tooltipShowOnFocus = true,
   tooltipPosition = 'bottom-center',
   className,
   type = 'button',
@@ -59,7 +65,11 @@ export function ButtonIcon({
   }
 
   return (
-    <TooltipTrigger content={tooltipContent} position={tooltipPosition}>
+    <TooltipTrigger
+      content={tooltipContent}
+      position={tooltipPosition}
+      showOnFocus={tooltipShowOnFocus}
+    >
       {button}
     </TooltipTrigger>
   );

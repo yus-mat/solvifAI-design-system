@@ -28,6 +28,11 @@ export type TooltipTriggerProps = {
   position?: TooltipPosition;
   /** Hover/focus show delay in ms. Defaults to {@link TOOLTIP_SHOW_DELAY_MS}. */
   showDelayMs?: number;
+  /**
+   * When false, the tooltip shows on hover only (not on focus).
+   * Use for controls that receive programmatic focus, such as overlay close buttons.
+   */
+  showOnFocus?: boolean;
 } & Omit<HTMLAttributes<HTMLSpanElement>, 'content'>;
 
 export function TooltipTrigger({
@@ -35,6 +40,7 @@ export function TooltipTrigger({
   children,
   position = 'bottom-center',
   showDelayMs = TOOLTIP_SHOW_DELAY_MS,
+  showOnFocus = true,
   className,
   ...rest
 }: TooltipTriggerProps) {
@@ -87,8 +93,8 @@ export function TooltipTrigger({
       className={['relative inline-flex', className].filter(Boolean).join(' ')}
       onMouseEnter={show}
       onMouseLeave={hide}
-      onFocus={show}
-      onBlur={handleBlur}
+      onFocus={showOnFocus ? show : undefined}
+      onBlur={showOnFocus ? handleBlur : undefined}
       {...rest}
     >
       {trigger}

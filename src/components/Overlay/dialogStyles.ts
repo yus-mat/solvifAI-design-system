@@ -21,7 +21,7 @@ export function dialogClassName({
 }
 
 export const dialogHeaderClassName =
-  'flex items-start justify-between gap-4 px-6 py-3';
+  'flex items-center justify-between gap-4 px-6 py-3';
 
 export const dialogTitleGroupClassName = 'flex min-w-0 flex-1 flex-col gap-0.5';
 
