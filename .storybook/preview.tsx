@@ -76,7 +76,7 @@ const preview: Preview = {
           'Content Display',
           ['Card', 'Chip', 'ChipGroup', 'InfoBlock', 'Tag', 'AccordionCard', 'Skeleton', '*'],
           'Control',
-          ['Checkbox', 'CheckboxField', 'Toggle', 'Picker', 'PickerGroup', '*'],
+          ['Checkbox', 'CheckboxField', 'RadioButton', 'RadioButtonField', 'Toggle', 'Picker', 'PickerGroup', '*'],
           'Forms',
           'Navigation',
           ['Tab', 'SegmentedControl', '*'],
