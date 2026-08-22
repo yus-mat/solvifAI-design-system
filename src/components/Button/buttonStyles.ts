@@ -88,6 +88,15 @@ const variantClassName: Record<ButtonEmphasis, Record<ButtonIntent, string>> = {
     danger: secondaryFilledClassName('danger'),
   },
   ghost: {
+    default: ghostClassName('text-text-action-primary'),
+    danger: ghostClassName('text-text-danger-primary'),
+  },
+};
+
+/** ButtonIcon ghost uses neutral-primary text; labeled Button ghost uses action-primary. */
+const buttonIconVariantClassName: Record<ButtonEmphasis, Record<ButtonIntent, string>> = {
+  ...variantClassName,
+  ghost: {
     default: ghostClassName('text-text-neutral-primary'),
     danger: ghostClassName('text-text-danger-primary'),
   },
@@ -146,7 +155,7 @@ export function buttonIconClassName({
 }) {
   return [
     baseClassName,
-    variantClassName[emphasis][intent],
+    buttonIconVariantClassName[emphasis][intent],
     iconOnlySizeClassName[size],
     className,
   ]
