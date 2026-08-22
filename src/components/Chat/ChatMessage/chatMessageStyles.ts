@@ -58,7 +58,7 @@ export const chatMessageActionGroupClassName =
   'flex items-center gap-0.5';
 
 export const chatMessageEditingActionsClassName =
-  'absolute top-full mt-1 flex items-center justify-end gap-0.5';
+  'absolute right-0 top-full mt-1 flex items-center justify-end gap-0.5';
 
 export function chatMessageActionsAlignmentClassName(type: ChatMessageType = 'ai') {
   return type === 'user' ? 'right-0' : 'left-0';
