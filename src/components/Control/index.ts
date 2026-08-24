@@ -12,8 +12,8 @@ export type {
   RadioButtonProps,
 } from './RadioButton';
 
-export { Toggle } from './Toggle';
-export type { ToggleProps } from './Toggle';
+export { Toggle, ToggleField } from './Toggle';
+export type { ToggleFieldProps, ToggleLabelPosition, ToggleProps } from './Toggle';
 
 export { Picker, PickerGroup } from '../Picker';
 export type { PickerProps, PickerGroupProps } from '../Picker';

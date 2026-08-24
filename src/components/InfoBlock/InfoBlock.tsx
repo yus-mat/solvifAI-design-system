@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 import { Button, ButtonIcon } from '@/components/Button';
-import { Toggle } from '@/components/Control';
+import { ToggleField } from '@/components/Control';
 import { IconWrapper } from '@/components/IconWrapper';
 import {
   CheckCheck,
@@ -121,11 +121,11 @@ export function InfoBlock({
             ) : null}
           </div>
           {showToggle ? (
-            <Toggle
+            <ToggleField
+              label={toggleLabel}
               checked={toggleChecked}
               defaultChecked={defaultToggleChecked}
               onCheckedChange={onToggleChange}
-              aria-label={toggleLabel}
             />
           ) : null}
           {children}
