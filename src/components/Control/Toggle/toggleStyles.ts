@@ -1,5 +1,12 @@
 import { focusRingOffsetClassName } from '@/styles/focusRing';
 
+export const toggleFieldClassName = [
+  'group/toggle inline-flex cursor-pointer items-center gap-3',
+  'has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-[0.38]',
+].join(' ');
+
+export const toggleFieldLabelClassName = 'body-2-bold text-foreground';
+
 export function toggleTrackClassName({
   checked = false,
   className,
