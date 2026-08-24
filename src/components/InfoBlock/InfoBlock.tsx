@@ -104,7 +104,7 @@ export function InfoBlock({
     <div className={infoBlockClassName({ type, className })} {...rest}>
       <div className={infoBlockContentRowClassName}>
         {icon ? (
-          <IconWrapper size="md" iconClassName={infoBlockIconInnerClassName(type)}>
+          <IconWrapper size="lg" iconClassName={infoBlockIconInnerClassName(type)}>
             {icon}
           </IconWrapper>
         ) : null}
