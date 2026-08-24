@@ -32,4 +32,4 @@ export const radioButtonFieldClassName = [
   'has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-[0.38]',
 ].join(' ');
 
-export const radioButtonFieldLabelClassName = 'body-2-bold text-foreground';
+export const radioButtonFieldLabelClassName = 'body-2-bold text-text-primary';

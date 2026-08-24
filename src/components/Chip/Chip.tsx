@@ -98,7 +98,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(function Chip(
       {leadingSlot ? (
         <IconWrapper size="s">{leadingSlot}</IconWrapper>
       ) : null}
-      <span className="min-w-0 truncate body-2-bold text-foreground">
+      <span className="min-w-0 truncate body-2-bold text-text-primary">
         {children}
       </span>
       {showRemove ? (

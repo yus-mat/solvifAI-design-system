@@ -58,7 +58,7 @@ function VariantMatrix({ disabled = false }: { disabled?: boolean }) {
           <div className="flex flex-col gap-4">
             {intents.map((intent) => (
               <div key={intent}>
-                <p className="mb-2 caption text-muted">Intent: {intent}</p>
+                <p className="mb-2 caption text-text-muted">Intent: {intent}</p>
                 <div className="flex flex-wrap gap-3">
                   {emphases.map((emphasis) => (
                     <ButtonIcon

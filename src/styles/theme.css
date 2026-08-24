@@ -101,11 +101,6 @@
   --color-destructive-secondary-hover: var(--background-danger-secondary);
   --color-destructive-secondary-pressed: var(--background-danger-secondary);
 
-  --color-foreground: var(--text-neutral-primary);
-  --color-muted: var(--text-neutral-muted);
-  --color-inverse: var(--text-neutral-inverse);
-  --color-action: var(--text-action-primary);
-
   --color-status-error: var(--text-function-error);
   --color-status-success: var(--text-function-success);
   --color-status-warning: var(--text-function-warning);

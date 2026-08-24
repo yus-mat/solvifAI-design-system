@@ -97,5 +97,5 @@ export function avatarStackItemClassName({
 }
 
 export function avatarStackOverflowClassName() {
-  return 'shrink-0 pl-3 caption-bold text-foreground';
+  return 'shrink-0 pl-3 caption-bold text-text-primary';
 }
