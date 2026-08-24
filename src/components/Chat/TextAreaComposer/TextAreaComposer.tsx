@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type ChangeEvent,
@@ -66,6 +67,8 @@ export type TextAreaComposerProps = {
   onVoice?: () => void;
   onSend?: () => void;
   sendDisabled?: boolean;
+  /** When true, the textarea grows to fit its content instead of scrolling. */
+  autoGrow?: boolean;
 } & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'value' | 'defaultValue' | 'onChange'>;
 
 export function TextAreaComposer({
@@ -91,10 +94,12 @@ export function TextAreaComposer({
   onVoice,
   onSend,
   sendDisabled,
+  autoGrow = false,
   className,
   ...rest
 }: TextAreaComposerProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
   const [uncontrolledAttachment, setUncontrolledAttachment] =
     useState<TextAreaComposerAttachment | null>(defaultAttachment);
@@ -155,6 +160,15 @@ export function TextAreaComposer({
     if (isAttachmentControlled) return;
     return () => revokeComposerAttachmentUrl(attachment);
   }, [attachment?.objectUrl, isAttachmentControlled]);
+
+  useLayoutEffect(() => {
+    if (!autoGrow) return;
+    const el = textareaRef.current;
+    if (!el) return;
+    el.style.overflow = 'hidden';
+    el.style.height = 'auto';
+    el.style.height = `${el.scrollHeight}px`;
+  }, [autoGrow, value]);
 
   const hasContent = value.trim().length > 0 || Boolean(attachment);
   const canSend = !sendDisabled && !disabled && hasContent;
@@ -230,6 +244,7 @@ export function TextAreaComposer({
       ) : null}
 
       <textarea
+        ref={textareaRef}
         value={value}
         disabled={disabled}
         placeholder={placeholder}
