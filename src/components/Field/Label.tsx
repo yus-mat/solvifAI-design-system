@@ -15,7 +15,7 @@ export function Label({
   ...rest
 }: LabelProps) {
   const classes = [
-    'flex items-center gap-1 body-2-bold text-foreground',
+    'flex items-center gap-1 body-2-bold text-text-primary',
     srOnly ? 'sr-only' : null,
     className,
   ]

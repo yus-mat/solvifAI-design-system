@@ -120,7 +120,7 @@ export function RawColorsDemo() {
   return (
     <div className="flex flex-col gap-10 bg-surface-base p-6">
       <div>
-        <h2 className="body-2-bold text-foreground">Raw color palettes</h2>
+        <h2 className="body-2-bold text-text-primary">Raw color palettes</h2>
         <p className="mt-1 max-w-3xl caption text-text-secondary">
           Primitive tonals from Figma <code className="text-text-muted">Raw/color_tailwind</code>{' '}
           and <code className="text-text-muted">Raw/color_custom</code>. These are the building

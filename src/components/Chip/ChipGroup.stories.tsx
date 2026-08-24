@@ -54,7 +54,7 @@ function KeyboardDemo() {
 
   return (
     <div className="flex max-w-md flex-col gap-3">
-      <p className="caption text-muted">
+      <p className="caption text-text-muted">
         Tab to focus the group, then use arrow keys to move between chips.
         Delete or Backspace removes the focused chip.
       </p>

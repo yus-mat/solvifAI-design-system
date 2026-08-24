@@ -20,7 +20,7 @@ export function FieldMessage({
 
   const classes = [
     'caption',
-    intent === 'error' ? 'text-text-function-error' : 'text-muted',
+    intent === 'error' ? 'text-text-function-error' : 'text-text-muted',
     className,
   ]
     .filter(Boolean)

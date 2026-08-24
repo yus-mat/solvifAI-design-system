@@ -38,4 +38,4 @@ export const checkboxFieldClassName = [
 ].join(' ');
 
 export const checkboxFieldLabelClassName =
-  'body-2-bold text-foreground';
+  'body-2-bold text-text-primary';

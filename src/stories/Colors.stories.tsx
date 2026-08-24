@@ -330,7 +330,7 @@ function Swatch({ name, bgClass, textClass, borderClass, surfaceClass }: SwatchS
         .filter(Boolean)
         .join(' ')}
     >
-      <span className={`caption-bold ${textClass ?? 'text-foreground'}`}>Aa</span>
+      <span className={`caption-bold ${textClass ?? 'text-text-primary'}`}>Aa</span>
     </div>
   );
 
@@ -350,7 +350,7 @@ function ColorsDemo() {
   return (
     <div className="flex flex-col gap-8 bg-surface-base p-6">
       <div>
-        <h2 className="body-2-bold text-foreground">Semantic colors</h2>
+        <h2 className="body-2-bold text-text-primary">Semantic colors</h2>
         <p className="mt-1 caption text-text-secondary">
           Synced from Figma <code className="text-text-muted">semantic</code> collection. Use the
           Theme toolbar to compare light and dark modes.

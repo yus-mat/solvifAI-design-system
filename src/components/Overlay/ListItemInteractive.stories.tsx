@@ -34,7 +34,7 @@ export const Default: Story = {
 export const WithTrailingSlot: Story = {
   args: {
     leadingSlot: leadingIcon,
-    trailingSlot: <span className="caption text-muted">2h ago</span>,
+    trailingSlot: <span className="caption text-text-muted">2h ago</span>,
     children: 'Comment preview text',
   },
 };

@@ -46,8 +46,8 @@ export function inputWrapperClassName({
 
 export const inputClassName = [
   'relative z-[1] block h-full w-full min-w-0 bg-transparent px-3',
-  'body-2 text-foreground outline-none',
-  'placeholder:text-muted',
+  'body-2 text-text-primary outline-none',
+  'placeholder:text-text-muted',
   'disabled:cursor-not-allowed',
 ].join(' ');
 
@@ -90,8 +90,8 @@ export function textAreaWrapperClassName({
 
 export const textAreaClassName = [
   'relative z-[1] block w-full min-w-0 min-h-20 bg-transparent p-3',
-  'body-2 text-foreground outline-none',
-  'placeholder:text-muted',
+  'body-2 text-text-primary outline-none',
+  'placeholder:text-text-muted',
   'disabled:cursor-not-allowed',
 ].join(' ');
 
@@ -134,7 +134,7 @@ export function dateInputWrapperClassName({
 
 export const dateInputClassName = [
   'relative z-[1] min-w-0 flex-1 bg-transparent',
-  'body-2 text-foreground outline-none',
+  'body-2 text-text-primary outline-none',
   'disabled:cursor-not-allowed',
   '[&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0',
   '[&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:w-full',
@@ -188,7 +188,7 @@ export function comboboxWrapperClassName({
 
 export const comboboxInputClassName = [
   'relative z-[1] min-w-0 flex-1 basis-[4ch] bg-transparent py-0',
-  'body-2 text-foreground outline-none',
-  'placeholder:text-muted',
+  'body-2 text-text-primary outline-none',
+  'placeholder:text-text-muted',
   'disabled:cursor-not-allowed',
 ].join(' ');

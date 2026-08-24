@@ -41,7 +41,7 @@ export const ListItemInteractive = forwardRef<
       {...rest}
     >
       {leadingSlot ? <IconWrapper size="s">{leadingSlot}</IconWrapper> : null}
-      <span className="min-w-0 flex-1 truncate body-2 text-foreground">
+      <span className="min-w-0 flex-1 truncate body-2 text-text-primary">
         {children}
       </span>
       {trailingSlot ? (

@@ -5,7 +5,7 @@ export const toggleFieldClassName = [
   'has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-[0.38]',
 ].join(' ');
 
-export const toggleFieldLabelClassName = 'body-2-bold text-foreground';
+export const toggleFieldLabelClassName = 'body-2-bold text-text-primary';
 
 export function toggleTrackClassName({
   checked = false,
