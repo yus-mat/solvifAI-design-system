@@ -14,7 +14,7 @@ const variantClassNames: Record<ChatTextVariant, string> = {
     'max-h-[200px] max-w-[580px] overflow-auto',
     'rounded-xl',
     'bg-background-neutral-primary',
-    'border border-border-function-info',
+    'border border-border-action-primary',
     'px-4 py-3 shadow-sm',
   ].join(' '),
 };

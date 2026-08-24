@@ -282,27 +282,39 @@ export function ChatMessage({
             ) : null}
             <div className="relative">
               {isEditing ? (
-                <textarea
-                  ref={textareaRef}
-                  aria-label="メッセージを編集"
-                  className={[
-                    chatTextClassName({ variant: 'user-editing' }),
-                    'w-full min-h-[72px] resize-none bg-transparent',
-                    focusOutlineSuppressClassName,
-                  ].join(' ')}
-                  value={value}
-                  onChange={(event) => setValue(event.target.value)}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Escape') {
-                      event.preventDefault();
-                      handleCancel();
-                    }
-                    if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
-                      event.preventDefault();
-                      handleSave();
-                    }
-                  }}
-                />
+                <div className="relative">
+                  {/* Ghost: invisible, sizes the container to match text content width */}
+                  <div
+                    aria-hidden
+                    className={[
+                      chatTextClassName({ variant: 'user-editing' }),
+                      'invisible whitespace-pre-wrap min-h-[72px]',
+                    ].join(' ')}
+                  >
+                    {value + '\n'}
+                  </div>
+                  <textarea
+                    ref={textareaRef}
+                    aria-label="メッセージを編集"
+                    className={[
+                      chatTextClassName({ variant: 'user-editing' }),
+                      'absolute inset-0 w-full min-h-[72px] resize-none bg-transparent',
+                      focusOutlineSuppressClassName,
+                    ].join(' ')}
+                    value={value}
+                    onChange={(event) => setValue(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Escape') {
+                        event.preventDefault();
+                        handleCancel();
+                      }
+                      if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
+                        event.preventDefault();
+                        handleSave();
+                      }
+                    }}
+                  />
+                </div>
               ) : (
                 children
               )}
