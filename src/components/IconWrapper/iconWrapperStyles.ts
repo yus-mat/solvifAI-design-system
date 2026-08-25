@@ -1,25 +1,29 @@
 import type { IconWrapperSize } from './iconWrapperTypes';
 
-/** Figma IconWrapper — wrapper box + inner icon dimensions per size variant. */
+/**
+ * Figma IconWrapper — wrapper box + inner icon dimensions per size variant.
+ * Wrapper boxes stay on the Figma footprint; padding is tighter so the glyph
+ * can use a larger optical size (helps Phosphor’s padded 256 viewBox).
+ */
 const sizeClassNames: Record<
   IconWrapperSize,
   { wrapper: string; icon: string }
 > = {
   xs: {
-    wrapper: 'size-4 p-0.5',
-    icon: 'size-3',
+    wrapper: 'size-4 p-px',
+    icon: 'size-3.5',
   },
   s: {
-    wrapper: 'size-5 p-1',
-    icon: 'size-3',
-  },
-  md: {
-    wrapper: 'size-6 p-1',
+    wrapper: 'size-5 p-0.5',
     icon: 'size-4',
   },
-  lg: {
-    wrapper: 'size-7 p-1',
+  md: {
+    wrapper: 'size-6 p-0.5',
     icon: 'size-5',
+  },
+  lg: {
+    wrapper: 'size-7 p-0.5',
+    icon: 'size-6',
   },
 };
 
