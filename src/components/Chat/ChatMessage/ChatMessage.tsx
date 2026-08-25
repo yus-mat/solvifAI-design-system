@@ -6,12 +6,10 @@ import {
   type HTMLAttributes,
   type ReactNode,
 } from 'react';
-import { Avatar } from '@/components/Avatar';
 import { Button, ButtonIcon } from '@/components/Button';
 import { chatTextClassName } from '@/components/Chat/ChatText/chatTextStyles';
 import { Copy, PencilLine, RotateCw, ThumbsDown, ThumbsUp } from '@/icons';
 import { focusOutlineSuppressClassName } from '@/styles/focusRing';
-import { CHAT_AI_AVATAR_ALT, CHAT_AI_AVATAR_SRC } from '../chatConstants';
 import type { ChatMessageType } from './chatMessageTypes';
 import {
   chatMessageActionGroupClassName,
@@ -33,7 +31,7 @@ export type ChatMessageProps = {
   type?: ChatMessageType;
   children: ReactNode;
   attachment?: ReactNode;
-  /** Override the default AI avatar. Ignored for user messages. */
+  /** Optional AI avatar. Hidden by default. Ignored for user messages. */
   avatar?: ReactNode;
   timestamp?: string;
   onThumbsUp?: () => void;
@@ -327,15 +325,10 @@ export function ChatMessage({
     );
   }
 
-  const avatarNode =
-    avatar ?? (
-      <Avatar size="sm" src={CHAT_AI_AVATAR_SRC} alt={CHAT_AI_AVATAR_ALT} />
-    );
-
   return (
     <div className={chatMessageClassName({ type, className })}>
       <div className={chatMessageRowClassName(type)}>
-        {avatarNode}
+        {avatar}
         <div
           className={[
             chatMessageContentColumnClassName,
