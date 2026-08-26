@@ -34,14 +34,14 @@ export function tooltipBodyClassName({
 
 /**
  * Anchor the floating panel to the trigger.
- * - left: panel's left edge = trigger left (body grows right)
- * - center: panel centered on trigger
- * - right: panel's right edge = trigger right (body grows left — use near viewport right edge)
+ * Left/right keep the caret tip on the trigger center; the body grows
+ * away from the near edge (rightward for left, leftward for right).
+ * Offset = pl-4/pr-4 (16px) + half of the 14px caret = 23px.
  */
 const tooltipTriggerAlignClassNames: Record<TooltipAlign, string> = {
-  left: 'left-0 right-auto translate-x-0',
+  left: 'left-1/2 right-auto -translate-x-[23px]',
   center: 'left-1/2 right-auto -translate-x-1/2',
-  right: 'right-0 left-auto translate-x-0',
+  right: 'right-1/2 left-auto translate-x-[23px]',
 };
 
 /**

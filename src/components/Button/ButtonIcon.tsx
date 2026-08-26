@@ -20,8 +20,8 @@ export type ButtonIconProps = {
   tooltipShowOnFocus?: boolean;
   /**
    * Tooltip placement. Prefer `top-*` / `bottom-*`.
-   * Near the right edge of the viewport/panel, use `bottom-right` or `top-right`
-   * so the body grows left and is not clipped.
+   * Near a panel edge, use `*-left` or `*-right` so the body grows
+   * inward (caret stays on the trigger; avoids overflow clipping).
    */
   tooltipPosition?: TooltipPosition;
   'aria-label': string;
