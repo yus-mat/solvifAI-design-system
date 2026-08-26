@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 import { ButtonIcon } from '@/components/Button';
-import { ChevronDown, ChevronUp, Maximize2, X } from '@/icons';
+import { ChevronLeft, ChevronRight, Maximize2, X } from '@/icons';
 import {
   answerPanelActionsClassName,
   answerPanelBodyClassName,
@@ -8,6 +8,7 @@ import {
   answerPanelClassName,
   answerPanelFooterActionsClassName,
   answerPanelFooterClassName,
+  answerPanelFooterRowClassName,
   answerPanelHeaderClassName,
   answerPanelStepControlClassName,
   answerPanelStepLabelClassName,
@@ -50,9 +51,38 @@ export function AnswerPanel({
   className,
   ...rest
 }: AnswerPanelProps) {
-  const showActions = Boolean(page || onExpand || onClose);
+  const showHeaderActions = Boolean(onExpand || onClose);
+  const showFooter = Boolean(footer || page);
   const canGoPrevious = page != null && page.current > 1;
   const canGoNext = page != null && page.current < page.total;
+
+  const pagination = page ? (
+    <div className={answerPanelStepControlClassName}>
+      <ButtonIcon
+        emphasis="ghost"
+        intent="default"
+        size="sm"
+        icon={<ChevronLeft aria-hidden />}
+        aria-label="前のステップ"
+        tooltipPosition="top-left"
+        disabled={!canGoPrevious}
+        onClick={page.onPrevious}
+      />
+      <p className={answerPanelStepLabelClassName}>
+        {page.current}/{page.total}
+      </p>
+      <ButtonIcon
+        emphasis="ghost"
+        intent="default"
+        size="sm"
+        icon={<ChevronRight aria-hidden />}
+        aria-label="次のステップ"
+        tooltipPosition="top-left"
+        disabled={!canGoNext}
+        onClick={page.onNext}
+      />
+    </div>
+  ) : null;
 
   return (
     <div
@@ -70,34 +100,8 @@ export function AnswerPanel({
           ) : null}
         </div>
 
-        {showActions ? (
+        {showHeaderActions ? (
           <div className={answerPanelActionsClassName}>
-            {page ? (
-              <div className={answerPanelStepControlClassName}>
-                <ButtonIcon
-                  emphasis="ghost"
-                  intent="default"
-                  size="sm"
-                  icon={<ChevronDown aria-hidden />}
-                  aria-label="次のステップ"
-                  disabled={!canGoNext}
-                  onClick={page.onNext}
-                />
-                <p className={answerPanelStepLabelClassName}>
-                  {page.current}/{page.total}
-                </p>
-                <ButtonIcon
-                  emphasis="ghost"
-                  intent="default"
-                  size="sm"
-                  icon={<ChevronUp aria-hidden />}
-                  aria-label="前のステップ"
-                  disabled={!canGoPrevious}
-                  onClick={page.onPrevious}
-                />
-              </div>
-            ) : null}
-
             {onExpand ? (
               <ButtonIcon
                 emphasis="ghost"
@@ -129,9 +133,14 @@ export function AnswerPanel({
         <div className={answerPanelBodyClassName}>{children}</div>
       ) : null}
 
-      {footer ? (
+      {showFooter ? (
         <footer className={answerPanelFooterClassName}>
-          <div className={answerPanelFooterActionsClassName}>{footer}</div>
+          <div className={answerPanelFooterRowClassName}>
+            {pagination}
+            {footer ? (
+              <div className={answerPanelFooterActionsClassName}>{footer}</div>
+            ) : null}
+          </div>
         </footer>
       ) : null}
     </div>

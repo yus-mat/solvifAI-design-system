@@ -33,9 +33,12 @@ export const answerPanelStepLabelClassName =
   'm-0 caption whitespace-nowrap text-text-neutral-secondary';
 
 export const answerPanelBodyClassName =
-  'flex min-h-0 flex-1 flex-col overflow-y-auto p-2';
+  'flex min-h-0 flex-1 flex-col overflow-y-auto p-4';
 
 export const answerPanelFooterClassName = 'shrink-0 px-4 py-3';
 
+export const answerPanelFooterRowClassName =
+  'flex w-full flex-wrap items-center gap-2';
+
 export const answerPanelFooterActionsClassName =
-  'flex w-full flex-wrap items-center justify-end gap-2';
+  'ml-auto flex flex-wrap items-center justify-end gap-2';
