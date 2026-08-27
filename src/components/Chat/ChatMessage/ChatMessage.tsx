@@ -7,7 +7,10 @@ import {
   type ReactNode,
 } from 'react';
 import { Button, ButtonIcon } from '@/components/Button';
-import { chatTextClassName } from '@/components/Chat/ChatText/chatTextStyles';
+import {
+  chatTextClassName,
+  chatTextContentClassName,
+} from '@/components/Chat/ChatText/chatTextStyles';
 import { Copy, PencilLine, RotateCw, ThumbsDown, ThumbsUp } from '@/icons';
 import { focusOutlineSuppressClassName } from '@/styles/focusRing';
 import type { ChatMessageType } from './chatMessageTypes';
@@ -232,7 +235,8 @@ export function ChatMessage({
 
   useEffect(() => {
     if (!isEditing) return;
-    textareaRef.current?.focus();
+    // preventScroll: focusing must not jump the message in the scroll container.
+    textareaRef.current?.focus({ preventScroll: true });
   }, [isEditing]);
 
   const hoverActions = isEditing ? null : (
@@ -265,7 +269,7 @@ export function ChatMessage({
 
   if (type === 'user') {
     return (
-      <div className={chatMessageClassName({ type, editing: isEditing, className })}>
+      <div className={chatMessageClassName({ type, className })}>
         <div className={chatMessageMessageRowClassName}>
           <div
             className={[
@@ -281,22 +285,26 @@ export function ChatMessage({
             <div className="relative">
               {isEditing ? (
                 <div className="relative">
-                  {/* Ghost: invisible, sizes the container to match text content width */}
+                  {/* Ghost: same box as ChatText so width/height stay stable while editing */}
                   <div
                     aria-hidden
                     className={[
-                      chatTextClassName({ variant: 'user-editing' }),
-                      'invisible whitespace-pre-wrap min-h-[72px]',
+                      chatTextClassName({ variant: 'user' }),
+                      'invisible',
                     ].join(' ')}
                   >
-                    {value + '\n'}
+                    <p className={`${chatTextContentClassName} whitespace-pre-wrap`}>
+                      {value || '\u00A0'}
+                    </p>
                   </div>
                   <textarea
                     ref={textareaRef}
                     aria-label="メッセージを編集"
                     className={[
                       chatTextClassName({ variant: 'user-editing' }),
-                      'absolute inset-0 w-full min-h-[72px] resize-none bg-transparent',
+                      // chatTextClassName includes `relative`; it wins over `absolute` in
+                      // CSS source order, so force absolute or the ghost stacks above.
+                      '!absolute inset-0 w-full resize-none overflow-auto bg-transparent',
                       focusOutlineSuppressClassName,
                     ].join(' ')}
                     value={value}
