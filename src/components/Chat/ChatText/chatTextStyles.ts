@@ -14,7 +14,8 @@ const variantClassNames: Record<ChatTextVariant, string> = {
     'max-h-[200px] max-w-[580px] overflow-auto',
     'rounded-xl',
     'bg-background-neutral-primary',
-    'border border-border-action-primary',
+    // Ring (not border) so entering edit mode does not grow the bubble.
+    'ring-1 ring-border-action-primary',
     'px-4 py-3 shadow-sm',
   ].join(' '),
 };

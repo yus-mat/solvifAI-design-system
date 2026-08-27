@@ -2,19 +2,15 @@ import type { ChatMessageType } from './chatMessageTypes';
 
 export function chatMessageClassName({
   type = 'ai',
-  editing = false,
   className,
 }: {
   type?: ChatMessageType;
-  editing?: boolean;
   className?: string;
 } = {}) {
   return [
-    // 56px between messages — the hover action row sits inside this margin, so a
-    // tighter gap makes it crowd the next message. +8px more while editing for
-    // the cancel/save action row.
-    'group/message relative flex w-full flex-col gap-0 px-0.5',
-    editing ? 'mb-16' : 'mb-14',
+    // 56px between messages — the hover/edit action row sits inside this margin,
+    // so toggling edit mode must not change message position.
+    'group/message relative mb-14 flex w-full flex-col gap-0 px-0.5',
     type === 'user' ? 'items-end' : 'items-start',
     className,
   ]

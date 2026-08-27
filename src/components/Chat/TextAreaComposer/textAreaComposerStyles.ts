@@ -35,7 +35,7 @@ export function textAreaComposerClassName({
 export const textAreaComposerAttachmentSlotClassName = 'p-3';
 
 export const textAreaComposerInputClassName =
-  'min-h-10 w-full resize-none border-0 bg-transparent p-3 body-2 text-text-neutral-primary outline-none placeholder:text-text-neutral-muted disabled:cursor-not-allowed';
+  'min-h-10 w-full resize-none border-0 bg-transparent p-4 body-1 text-text-neutral-primary outline-none placeholder:text-text-neutral-muted disabled:cursor-not-allowed';
 
 export const textAreaComposerActionBarClassName =
   'flex items-center justify-between px-3 py-2';
