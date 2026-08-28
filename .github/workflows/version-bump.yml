@@ -1,0 +1,59 @@
+name: Version Bump
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - '**/*.md'
+      - '.github/**'
+      - '.gitignore'
+      - 'LICENSE'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: version-bump
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    # Two guards against a self-retrigger loop: the actor check, and the marker
+    # this workflow puts in its own commit message.
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      !contains(github.event.head_commit.message, '[version bump]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          # Default GITHUB_TOKEN pushes do not trigger workflows, so the bump
+          # commit cannot retrigger this job.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Configure git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      # `npm version` updates package.json and package-lock.json together and
+      # does not run the `prepare` script, so no library build happens here.
+      # (Deliberately no `npm ci` — that would run `prepare` / `build:lib`.)
+      - name: Bump patch version
+        id: bump
+        run: |
+          npm version patch --no-git-tag-version
+          echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        run: |
+          git add package.json package-lock.json
+          git commit -m "chore: bump version to ${{ steps.bump.outputs.version }} [version bump]"
+          git push origin HEAD:master
