@@ -48,7 +48,7 @@ export function TooltipTrigger({
   const [active, setActive] = useState(false);
   const showTimeoutRef = useRef<number | null>(null);
   const { mounted, shown, onTransitionEnd } = useOverlayPresence(active);
-  const { side, align } = resolveTooltipPlacement(position);
+  const placement = resolveTooltipPlacement(position);
 
   const clearShowTimeout = () => {
     if (showTimeoutRef.current != null) {
@@ -102,7 +102,7 @@ export function TooltipTrigger({
         <span
           id={tooltipId}
           className={[
-            tooltipTriggerPanelClassName({ side, align }),
+            tooltipTriggerPanelClassName(placement),
             motionAppearOpacityClassName,
             shown ? 'opacity-100' : 'opacity-0',
           ].join(' ')}

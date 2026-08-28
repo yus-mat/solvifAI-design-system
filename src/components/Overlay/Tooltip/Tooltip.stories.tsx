@@ -140,3 +140,40 @@ export const WithTrigger: Story = {
     </div>
   ),
 };
+
+export const SideNav: Story = {
+  render: () => (
+    <div className="flex h-[360px] items-center gap-16 p-8">
+      <div className="flex flex-col items-center gap-1">
+        <p className="mb-2 font-mono caption text-text-neutral-muted">right-center (sidenav)</p>
+        {(['right-top', 'right-center', 'right-bottom'] as const).map((pos) => (
+          <ButtonIcon
+            key={pos}
+            emphasis="ghost"
+            intent="default"
+            size="sm"
+            icon={<PanelRightClose aria-hidden />}
+            aria-label={pos}
+            tooltip={pos}
+            tooltipPosition={pos}
+          />
+        ))}
+      </div>
+      <div className="flex flex-col items-center gap-1">
+        <p className="mb-2 font-mono caption text-text-neutral-muted">left-center</p>
+        {(['left-top', 'left-center', 'left-bottom'] as const).map((pos) => (
+          <ButtonIcon
+            key={pos}
+            emphasis="ghost"
+            intent="default"
+            size="sm"
+            icon={<PanelRightClose aria-hidden />}
+            aria-label={pos}
+            tooltip={pos}
+            tooltipPosition={pos}
+          />
+        ))}
+      </div>
+    </div>
+  ),
+};
