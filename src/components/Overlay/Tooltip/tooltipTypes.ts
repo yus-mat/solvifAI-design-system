@@ -1,9 +1,18 @@
 export type TooltipAlign = 'left' | 'center' | 'right';
 
-export type TooltipSide = 'top' | 'bottom';
+export type TooltipVAlign = 'top' | 'center' | 'bottom';
 
-/** Primary placements: side of trigger + horizontal arrow/body align. */
-export type TooltipAnchoredPosition = `${TooltipSide}-${TooltipAlign}`;
+export type TooltipSide = 'top' | 'bottom' | 'left' | 'right';
+
+/**
+ * Primary placements: side of trigger + alignment along that side.
+ *
+ * For `top`/`bottom` sides, alignment is horizontal: `left | center | right`.
+ * For `left`/`right` sides, alignment is vertical: `top | center | bottom`.
+ */
+export type TooltipAnchoredPosition =
+  | `${'top' | 'bottom'}-${TooltipAlign}`
+  | `${'left' | 'right'}-${TooltipVAlign}`;
 
 /**
  * Placement relative to the trigger.
@@ -11,6 +20,8 @@ export type TooltipAnchoredPosition = `${TooltipSide}-${TooltipAlign}`;
  * Preferred:
  * - `top-left` | `top-center` | `top-right`
  * - `bottom-left` | `bottom-center` | `bottom-right`
+ * - `right-top` | `right-center` | `right-bottom`
+ * - `left-top` | `left-center` | `left-bottom`
  *
  * Shorthand:
  * - `top` / `bottom` → `*-center`
@@ -18,13 +29,13 @@ export type TooltipAnchoredPosition = `${TooltipSide}-${TooltipAlign}`;
  */
 export type TooltipPosition =
   | TooltipAnchoredPosition
-  | TooltipSide
+  | 'top'
+  | 'bottom'
   | TooltipAlign;
 
-export type TooltipPlacement = {
-  side: TooltipSide;
-  align: TooltipAlign;
-};
+export type TooltipPlacement =
+  | { side: 'top' | 'bottom'; align: TooltipAlign }
+  | { side: 'left' | 'right'; align: TooltipVAlign };
 
 export const TOOLTIP_ANCHORED_POSITIONS: TooltipAnchoredPosition[] = [
   'top-left',
@@ -33,6 +44,12 @@ export const TOOLTIP_ANCHORED_POSITIONS: TooltipAnchoredPosition[] = [
   'bottom-left',
   'bottom-center',
   'bottom-right',
+  'right-top',
+  'right-center',
+  'right-bottom',
+  'left-top',
+  'left-center',
+  'left-bottom',
 ];
 
 export function resolveTooltipPlacement(
@@ -42,10 +59,17 @@ export function resolveTooltipPlacement(
     return { side: position, align: 'center' };
   }
 
+  // Legacy shorthands → bottom-*
   if (position === 'left' || position === 'center' || position === 'right') {
     return { side: 'bottom', align: position };
   }
 
-  const [side, align] = position.split('-') as [TooltipSide, TooltipAlign];
-  return { side, align };
+  const [side, align] = position.split('-') as [TooltipSide, TooltipAlign & TooltipVAlign];
+
+  if (side === 'left' || side === 'right') {
+    const vAlign = (align as TooltipVAlign | undefined) ?? 'center';
+    return { side, align: vAlign };
+  }
+
+  return { side, align: align ?? 'center' };
 }

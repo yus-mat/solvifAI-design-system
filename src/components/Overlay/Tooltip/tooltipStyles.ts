@@ -1,12 +1,12 @@
-import type { TooltipAlign, TooltipSide } from './tooltipTypes';
+import type { TooltipAlign, TooltipPlacement, TooltipSide, TooltipVAlign } from './tooltipTypes';
+
+// ── Top/bottom layouts ────────────────────────────────────────────────────────
 
 const pointerRowAlignClassNames: Record<TooltipAlign, string> = {
   left: 'justify-start pl-4',
   center: 'justify-center',
   right: 'justify-end pr-4',
 };
-
-export const tooltipClassName = 'inline-flex w-max max-w-xs flex-col';
 
 export function tooltipPointerRowClassName({
   align = 'center',
@@ -19,50 +19,108 @@ export function tooltipPointerRowClassName({
   ].join(' ');
 }
 
+// ── Left/right layouts ────────────────────────────────────────────────────────
+
+const pointerColAlignClassNames: Record<TooltipVAlign, string> = {
+  top: 'items-start pt-4',
+  center: 'items-center',
+  bottom: 'items-end pb-4',
+};
+
+export function tooltipPointerColClassName({
+  align = 'center',
+}: {
+  align?: TooltipVAlign;
+} = {}) {
+  return [
+    'relative z-[1] flex w-[7px] shrink-0 flex-col leading-none',
+    pointerColAlignClassNames[align],
+  ].join(' ');
+}
+
+// ── Body ─────────────────────────────────────────────────────────────────────
+
 export function tooltipBodyClassName({
   side = 'bottom',
 }: {
   side?: TooltipSide;
 } = {}) {
+  const tuck =
+    side === 'top'
+      ? '-mb-0.5'
+      : side === 'bottom'
+        ? '-mt-0.5'
+        : side === 'right'
+          ? '-ml-0.5'
+          : '-mr-0.5'; // left
+
   return [
     'relative z-0 w-full rounded-md bg-background-neutral-inverse px-3 py-2',
     'caption text-text-neutral-inverse',
-    // Tuck under the caret so trigger→body gap stays in the 8–12px range.
-    side === 'top' ? '-mb-0.5' : '-mt-0.5',
+    tuck,
   ].join(' ');
 }
 
+// ── Container ─────────────────────────────────────────────────────────────────
+
+export function tooltipContainerClassName({
+  side = 'bottom',
+}: {
+  side?: TooltipSide;
+} = {}) {
+  const isHorizontal = side === 'left' || side === 'right';
+  return isHorizontal
+    ? 'inline-flex w-max max-w-xs flex-row items-stretch'
+    : 'inline-flex w-max max-w-xs flex-col';
+}
+
+/** @deprecated Use tooltipContainerClassName instead. */
+export const tooltipClassName = 'inline-flex w-max max-w-xs flex-col';
+
+// ── Trigger panel positioning ─────────────────────────────────────────────────
+
 /**
- * Anchor the floating panel to the trigger.
- * Left/right keep the caret tip on the trigger center; the body grows
- * away from the near edge (rightward for left, leftward for right).
+ * Offset from trigger to the near edge of the floating panel.
+ */
+const tooltipTriggerSideClassNames: Record<TooltipSide, string> = {
+  top: 'bottom-full mb-1',
+  bottom: 'top-full mt-1',
+  right: 'left-full ml-1',
+  left: 'right-full mr-1',
+};
+
+/**
+ * Horizontal alignment of the panel relative to the trigger (top/bottom sides).
+ * Keeps the caret tip centred on the trigger; body grows away from the near edge.
  * Offset = pl-4/pr-4 (16px) + half of the 14px caret = 23px.
  */
-const tooltipTriggerAlignClassNames: Record<TooltipAlign, string> = {
+const tooltipTriggerHAlignClassNames: Record<TooltipAlign, string> = {
   left: 'left-1/2 right-auto -translate-x-[23px]',
   center: 'left-1/2 right-auto -translate-x-1/2',
   right: 'right-1/2 left-auto translate-x-[23px]',
 };
 
 /**
- * Offset from trigger to caret tip.
- * 4px tip gap + 6px caret − 2px body tuck ≈ 8px to the bubble (target 8–12px).
+ * Vertical alignment of the panel relative to the trigger (left/right sides).
+ * Offset = pt-4/pb-4 (16px) + half of the 14px caret = 23px.
  */
-const tooltipTriggerSideClassNames: Record<TooltipSide, string> = {
-  top: 'bottom-full mb-1',
-  bottom: 'top-full mt-1',
+const tooltipTriggerVAlignClassNames: Record<TooltipVAlign, string> = {
+  top: 'top-1/2 bottom-auto -translate-y-[23px]',
+  center: 'top-1/2 bottom-auto -translate-y-1/2',
+  bottom: 'bottom-1/2 top-auto translate-y-[23px]',
 };
 
-export function tooltipTriggerPanelClassName({
-  side = 'bottom',
-  align = 'center',
-}: {
-  side?: TooltipSide;
-  align?: TooltipAlign;
-} = {}) {
+export function tooltipTriggerPanelClassName(placement: TooltipPlacement) {
+  const { side } = placement;
+  const isHorizontal = side === 'left' || side === 'right';
+
+  const alignClass = isHorizontal
+    ? tooltipTriggerVAlignClassNames[(placement as { side: 'left' | 'right'; align: 'top' | 'center' | 'bottom' }).align]
+    : tooltipTriggerHAlignClassNames[(placement as { side: 'top' | 'bottom'; align: TooltipAlign }).align];
+
   return [
     'pointer-events-none absolute z-50 w-max max-w-xs',
     tooltipTriggerSideClassNames[side],
-    tooltipTriggerAlignClassNames[align],
+    alignClass,
   ].join(' ');
 }
