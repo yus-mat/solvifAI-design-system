@@ -4,7 +4,7 @@ import type { ButtonEmphasis, ButtonIntent, ButtonSize } from './buttonTypes';
 const interactiveOverlayClassName = [
   'relative isolate',
   'before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit]',
-  'before:bg-transparent before:transition-colors before:duration-150',
+  'before:bg-transparent before:transition-colors before:duration-150 before:ease-[cubic-bezier(0.4,0,0.1,1)]',
   'hover:before:bg-background-interactive-hover',
   'active:before:bg-background-interactive-pressed',
   '[&>*]:relative [&>*]:z-[2]',
@@ -66,7 +66,7 @@ const ghostClassName = (textClass: string) =>
 
 const baseClassName = [
   'inline-flex cursor-pointer items-center justify-center rounded-full whitespace-nowrap',
-  'transition-[background-color,box-shadow,color,opacity] duration-150',
+  'transition-[background-color,box-shadow,color,opacity] duration-150 ease-[cubic-bezier(0.4,0,0.1,1)]',
   focusRingOffsetClassName,
   'disabled:cursor-not-allowed disabled:opacity-[0.38] disabled:pointer-events-none',
 ].join(' ');
