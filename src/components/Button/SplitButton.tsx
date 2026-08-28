@@ -6,11 +6,7 @@ import {
   type ReactNode,
 } from 'react';
 import { Divider } from '@/components/Divider';
-import {
-  IconWrapper,
-  buttonIconOnlyWrapperSize,
-  buttonIconWrapperSize,
-} from '@/components/IconWrapper';
+import { IconWrapper, buttonIconWrapperSize } from '@/components/IconWrapper';
 import { DropdownList } from '@/components/Overlay/DropdownList';
 import { ChevronDown } from '@/icons';
 import {
@@ -105,7 +101,9 @@ export function SplitButton({
             if (menu) setMenuOpen(!menuOpen);
           }}
         >
-          <IconWrapper size={buttonIconOnlyWrapperSize.sm}>
+          {/* Figma shrank the chevron to a 16px wrapper box (12px glyph); `xs`
+              keeps that footprint with the usual Phosphor optical bump. */}
+          <IconWrapper size="xs">
             <ChevronDown aria-hidden />
           </IconWrapper>
         </button>

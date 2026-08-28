@@ -12,7 +12,7 @@ import type {
 const SPLIT_SIZE = 'sm' as const;
 
 /**
- * Shared segment chrome — square corners; the group clips to rounded-lg so the
+ * Shared segment chrome — square corners; the group clips to rounded-full so the
  * outer stroke and fill share one radius (no nested-radius hairline gap).
  */
 const segmentShell =
@@ -31,7 +31,7 @@ const segmentClassName: Record<SplitButtonVariant, string> = {
 
 /** Primary — gradient on outer frame only; inner ButtonRegular + ButtonIcon are transparent. */
 const primaryGroupClassName = [
-  'relative isolate inline-flex h-8 items-stretch overflow-hidden rounded-lg',
+  'relative isolate inline-flex h-8 items-stretch overflow-hidden rounded-full',
   'shadow-[var(--shadow-button)]',
   'bg-background-action-primary text-text-neutral-inverse',
   'bg-gradient-to-t from-background-action-primary to-background-action-primary-gradient-end',
@@ -39,7 +39,7 @@ const primaryGroupClassName = [
 
 /** Secondary — hairline on the shell; ButtonShadow on ::before. */
 const secondaryGroupClassName = [
-  'relative isolate inline-flex h-8 items-stretch overflow-hidden rounded-lg',
+  'relative isolate inline-flex h-8 items-stretch overflow-hidden rounded-full',
   'bg-background-neutral-primary',
   'shadow-[inset_0_0_0_0.5px_var(--border-neutral-muted)]',
   'before:pointer-events-none before:absolute before:inset-0 before:z-[3] before:rounded-[inherit]',
@@ -56,11 +56,16 @@ const dividerColorClassName: Record<SplitButtonVariant, string> = {
   secondary: 'bg-border-neutral-muted',
 };
 
-/** Menu trigger — stretch to group height; horizontal padding matches ButtonIcon SM. */
-const splitMenuSizeClassName = 'self-stretch !py-0 px-1.5';
+/**
+ * Menu trigger — stretch to group height; 6px against the divider and 10px at the
+ * pill's right cap. Figma models that extra 4px as padding on the group, but the
+ * group clips its segments, so carrying it on the segment instead keeps the
+ * hover/pressed overlay flush with the rounded end.
+ */
+const splitMenuSizeClassName = 'self-stretch !py-0 pl-1.5 pr-2.5';
 
 export const splitButtonDividerWrapperClassName =
-  'relative z-[1] flex items-center self-stretch py-1';
+  'relative z-[1] flex items-center self-stretch py-2';
 
 /** Menu panel — right-aligned, 8px gap (spacing-2) above or below the trigger. */
 export function splitButtonMenuPanelClassName(
@@ -98,6 +103,9 @@ export function splitButtonMainClassName({
     segmentClassName[variant],
     segmentShell,
     textSizeClassName[SPLIT_SIZE],
+    // 16px at the pill's left cap vs 12px against the divider — the rounded cap
+    // eats into the flat gap, so an even 12/12 reads as right-heavy.
+    '!pl-4',
     className,
   ]
     .filter(Boolean)

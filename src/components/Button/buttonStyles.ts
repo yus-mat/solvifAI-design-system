@@ -45,22 +45,15 @@ const secondaryVariantClassName: Record<
   },
 };
 
-/**
- * Figma inside stroke via inset shadow — does not add layout height (unlike
- * `border`, which was making secondary ~39px vs primary 37px) and keeps the
- * fill flush with the stroke at rounded corners.
- */
-const secondaryInsetStrokeClassName =
-  'shadow-[inset_0_0_0_0.5px_var(--border-neutral-muted)]';
-
 const secondaryFilledClassName = (intent: ButtonIntent) => {
   const variant = secondaryVariantClassName[intent];
   return [
-    // Depth on ::before (`--shadow-button`); hairline stroke on the element — separate layers.
-    layeredInteractiveClassName,
+    // No ButtonShadow in Figma — secondary is a flat fill with a 1px stroke.
+    // The border is safe on layout height because the size classes pin `h-10` / `h-8`.
+    interactiveOverlayClassName,
     variant.bg,
     variant.text,
-    secondaryInsetStrokeClassName,
+    'border border-border-neutral-muted',
   ].join(' ');
 };
 
@@ -72,7 +65,7 @@ const ghostClassName = (textClass: string) =>
   ].join(' ');
 
 const baseClassName = [
-  'inline-flex cursor-pointer items-center justify-center rounded-lg whitespace-nowrap',
+  'inline-flex cursor-pointer items-center justify-center rounded-full whitespace-nowrap',
   'transition-[background-color,box-shadow,color,opacity] duration-150',
   focusRingOffsetClassName,
   'disabled:cursor-not-allowed disabled:opacity-[0.38] disabled:pointer-events-none',
@@ -102,14 +95,15 @@ const buttonIconVariantClassName: Record<ButtonEmphasis, Record<ButtonIntent, st
   },
 };
 
-/** Figma ButtonRegular: MD 48px, SM 32px, with a 4px content gap. */
+/** Figma ButtonRegular: MD 40px, SM 32px, with a 4px content gap. */
 const textSizeClassName: Record<ButtonSize, string> = {
-  md: 'h-12 gap-1 px-4 body-1',
+  md: 'h-10 gap-1 px-4 body-1',
   sm: 'h-8 gap-1 px-3 body-2',
 };
 
+/** Figma ButtonIcon: MD 40px, SM 32px — square, padding comes from the glyph box. */
 const iconOnlySizeClassName: Record<ButtonSize, string> = {
-  md: 'size-11 p-0',
+  md: 'size-10 p-0',
   sm: 'size-8 p-0',
 };
 
