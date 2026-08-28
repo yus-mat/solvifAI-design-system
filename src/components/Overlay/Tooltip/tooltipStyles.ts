@@ -22,9 +22,9 @@ export function tooltipPointerRowClassName({
 // ── Left/right layouts ────────────────────────────────────────────────────────
 
 const pointerColAlignClassNames: Record<TooltipVAlign, string> = {
-  top: 'items-start pt-4',
-  center: 'items-center',
-  bottom: 'items-end pb-4',
+  top: 'justify-start pt-4',
+  center: 'justify-center',
+  bottom: 'justify-end pb-4',
 };
 
 export function tooltipPointerColClassName({
