@@ -52,7 +52,7 @@ export function ProductSidebar({
                 : 'body-2 bg-background-neutral-primary text-text-neutral-primary hover:bg-background-interactive-hover',
             ].join(' ')}
           >
-            <IconWrapper size="s">{item.icon}</IconWrapper>
+            <IconWrapper size="sm">{item.icon}</IconWrapper>
             <span>{item.label}</span>
           </button>
         ))}

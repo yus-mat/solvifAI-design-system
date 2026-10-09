@@ -95,3 +95,15 @@ export const CommentBox: Story = {
     </PopoverDemo>
   ),
 };
+
+export const Muted: Story = {
+  render: () => (
+    <div className="w-[357px]">
+      <Popover type="muted" closable>
+        <p className="m-0 body-2 p-4 text-text-neutral-primary">
+          Figma `Type=Muted` — muted サーフェス上のポップオーバー。
+        </p>
+      </Popover>
+    </div>
+  ),
+};

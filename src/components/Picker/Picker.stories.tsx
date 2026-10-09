@@ -5,13 +5,13 @@ import { Picker } from './Picker';
 import { PickerGroup } from './PickerGroup';
 
 const leadingSlot = (
-  <IconWrapper size="s">
+  <IconWrapper size="sm">
     <Sparkles aria-hidden />
   </IconWrapper>
 );
 
 const customTrailingSlot = (
-  <IconWrapper size="s">
+  <IconWrapper size="sm">
     <ArrowRight aria-hidden />
   </IconWrapper>
 );
@@ -92,7 +92,7 @@ export const CustomTrailing: Story = {
         title="デフォルト"
         subtitle="省略時はチェックアイコン"
         trailingSlot={
-          <IconWrapper size="s">
+          <IconWrapper size="sm">
             <Check aria-hidden />
           </IconWrapper>
         }

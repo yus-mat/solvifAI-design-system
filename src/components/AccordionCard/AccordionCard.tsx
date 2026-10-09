@@ -71,7 +71,7 @@ export function AccordionCard({
         >
           <div className={accordionCardHeaderClassName}>{header}</div>
           <IconWrapper
-            size="s"
+            size="sm"
             className={[
               accordionCardChevronClassName,
               open ? 'rotate-180' : 'rotate-0',

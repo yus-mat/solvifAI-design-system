@@ -1,1 +1,1 @@
-export type IconWrapperSize = 'xs' | 's' | 'md' | 'lg';
+export type IconWrapperSize = 'xs' | 'sm' | 'md' | 'lg';

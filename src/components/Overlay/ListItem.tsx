@@ -51,7 +51,7 @@ export const ListItem = forwardRef<HTMLButtonElement, ListItemProps>(
         {...rest}
       >
         {showLeading && icon ? (
-          <IconWrapper size="s">{icon}</IconWrapper>
+          <IconWrapper size="sm">{icon}</IconWrapper>
         ) : null}
         <span className="min-w-0 flex-1 truncate">{children}</span>
       </button>

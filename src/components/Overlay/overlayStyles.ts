@@ -1,15 +1,25 @@
 import { focusRingInsetClassName } from '@/styles/focusRing';
 import { motionAppearOpacityClassName } from '@/styles/motion';
+import type { PopoverType } from './overlayTypes';
+
+/** Figma Popover `Type` — Default sits on surface/raise, Muted on surface/muted. */
+const popoverTypeClassName: Record<PopoverType, string> = {
+  default: 'bg-surface-raise',
+  muted: 'bg-surface-muted',
+};
 
 export function popoverClassName({
+  type = 'default',
   shown = true,
   className,
 }: {
+  type?: PopoverType;
   shown?: boolean;
   className?: string;
 } = {}) {
   return [
-    'w-full max-w-[540px] overflow-clip rounded-xl border border-border-neutral-muted bg-surface-raise shadow-md',
+    'w-full max-w-[540px] overflow-clip rounded-xl border border-border-neutral-muted shadow-md',
+    popoverTypeClassName[type],
     motionAppearOpacityClassName,
     shown ? 'opacity-100' : 'opacity-0',
     className,

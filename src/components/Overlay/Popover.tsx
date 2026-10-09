@@ -2,10 +2,13 @@ import type { HTMLAttributes, ReactNode } from 'react';
 import { ButtonIcon } from '@/components/Button';
 import { X } from '@/icons';
 import { popoverClassName, popoverCloseButtonClassName, popoverContentClassName, popoverInnerClassName } from './overlayStyles';
+import type { PopoverType } from './overlayTypes';
 import { useOverlayPresence } from './useOverlayPresence';
 
 export type PopoverProps = {
   open?: boolean;
+  /** Figma `Type` — `muted` swaps the panel onto the muted surface. */
+  type?: PopoverType;
   closable?: boolean;
   onClose?: () => void;
   closeLabel?: string;
@@ -14,6 +17,7 @@ export type PopoverProps = {
 
 export function Popover({
   open = true,
+  type = 'default',
   closable = false,
   onClose,
   closeLabel = '閉じる',
@@ -27,7 +31,7 @@ export function Popover({
 
   return (
     <div
-      className={popoverClassName({ shown, className })}
+      className={popoverClassName({ type, shown, className })}
       onTransitionEnd={onTransitionEnd}
       {...rest}
     >

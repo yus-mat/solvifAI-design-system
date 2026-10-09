@@ -53,7 +53,7 @@ const secondaryFilledClassName = (intent: ButtonIntent) => {
     interactiveOverlayClassName,
     variant.bg,
     variant.text,
-    'border border-border-neutral-muted',
+    'border border-border-neutral-secondary',
   ].join(' ');
 };
 
@@ -65,7 +65,7 @@ const ghostClassName = (textClass: string) =>
   ].join(' ');
 
 const baseClassName = [
-  'inline-flex cursor-pointer items-center justify-center rounded-full whitespace-nowrap',
+  'inline-flex cursor-pointer items-center justify-center rounded-lg whitespace-nowrap',
   'transition-[background-color,box-shadow,color,opacity] duration-150 ease-[cubic-bezier(0.4,0,0.1,1)]',
   focusRingOffsetClassName,
   'disabled:cursor-not-allowed disabled:opacity-[0.38] disabled:pointer-events-none',
@@ -95,9 +95,9 @@ const buttonIconVariantClassName: Record<ButtonEmphasis, Record<ButtonIntent, st
   },
 };
 
-/** Figma ButtonRegular: MD 40px, SM 32px, with a 4px content gap. */
+/** Figma ButtonRegular: MD 40px / body-1-bold, SM 32px / body-2, 4px content gap. */
 const textSizeClassName: Record<ButtonSize, string> = {
-  md: 'h-10 gap-1 px-4 body-1',
+  md: 'h-10 gap-1 px-4 body-1-bold',
   sm: 'h-8 gap-1 px-3 body-2',
 };
 

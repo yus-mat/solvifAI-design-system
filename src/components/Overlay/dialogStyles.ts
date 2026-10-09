@@ -20,8 +20,9 @@ export function dialogClassName({
     .join(' ');
 }
 
+/** Figma Dialog header/body/footer all carry an even 16px pad. */
 export const dialogHeaderClassName =
-  'flex items-center justify-between gap-4 px-6 py-3';
+  'flex items-center justify-between gap-4 p-4';
 
 export const dialogTitleGroupClassName = 'flex min-w-0 flex-1 flex-col gap-0.5';
 
@@ -31,9 +32,9 @@ export const dialogTitleClassName =
 export const dialogSubtitleClassName =
   'm-0 caption text-text-neutral-muted';
 
-export const dialogBodyClassName = 'flex flex-col gap-6 px-6 pb-6';
+export const dialogBodyClassName = 'flex flex-col gap-6 px-4 pb-4';
 
-export const dialogFooterClassName = 'px-6 py-4';
+export const dialogFooterClassName = 'p-4';
 
 export const dialogFooterActionsClassName =
   'flex w-full flex-wrap items-center justify-end gap-2';
