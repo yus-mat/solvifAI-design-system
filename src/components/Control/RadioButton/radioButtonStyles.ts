@@ -9,13 +9,14 @@ export const radioButtonRootClassName = [
 ].join(' ');
 
 export const radioButtonControlClassName = [
-  'relative size-5 shrink-0 rounded-full',
+  /* Figma Radio: 16px control with a 10px inner dot. */
+  'relative size-4 shrink-0 rounded-full',
   /* No background fill — stroke only. */
   'border border-border-neutral-secondary bg-transparent',
   'transition-[border-color] duration-150',
   /* Inner dot via ::after, centered, hidden by default. */
   'after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2',
-  'after:size-2 after:rounded-full after:bg-background-action-primary',
+  'after:size-2.5 after:rounded-full after:bg-background-action-primary',
   'after:opacity-0 after:transition-opacity after:duration-150',
   /* Focus: border turns blue; circle size unchanged. */
   'peer-focus-visible:border-border-action-primary',
@@ -32,4 +33,7 @@ export const radioButtonFieldClassName = [
   'has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-[0.38]',
 ].join(' ');
 
-export const radioButtonFieldLabelClassName = 'body-2-bold text-text-primary';
+export const radioButtonFieldLabelClassName = 'body-2 text-text-neutral-primary';
+
+/** Figma `Radio Group` — vertical stack with a 12px gap. */
+export const radioGroupClassName = 'flex flex-col gap-3';

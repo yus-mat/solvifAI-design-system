@@ -3,7 +3,7 @@ import { Send } from '@/icons';
 import { IconWrapper } from './IconWrapper';
 import type { IconWrapperSize } from './iconWrapperTypes';
 
-const sizes: IconWrapperSize[] = ['xs', 's', 'md', 'lg'];
+const sizes: IconWrapperSize[] = ['xs', 'sm', 'md', 'lg'];
 
 const meta = {
   title: 'Foundation/IconWrapper',

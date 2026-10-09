@@ -35,6 +35,8 @@ export type ComboboxInputProps = {
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   multiple?: boolean;
+  /** Figma `showIcon` — render the trailing search glyph. */
+  showIcon?: boolean;
   invalid?: boolean;
   wrapperClassName?: string;
   placeholder?: string;
@@ -64,6 +66,7 @@ export const ComboboxInput = forwardRef<HTMLInputElement, ComboboxInputProps>(
       defaultOpen = false,
       onOpenChange,
       multiple = true,
+      showIcon = true,
       invalid = false,
       wrapperClassName,
       className,
@@ -295,9 +298,9 @@ export const ComboboxInput = forwardRef<HTMLInputElement, ComboboxInputProps>(
             {...rest}
           />
 
-          {!disabled ? (
+          {showIcon && !disabled ? (
             <IconWrapper
-              size="s"
+              size="sm"
               className="ml-auto shrink-0 text-text-neutral-muted"
             >
               <Search aria-hidden />

@@ -64,10 +64,10 @@ export function SlideSidebar({
   return (
     <aside className="flex h-full w-[168px] shrink-0 flex-col gap-2 overflow-y-auto border-r border-border-neutral-muted bg-surface-muted py-3 pl-2 pr-[9px]">
       <div className="flex items-start justify-between">
-        <IconWrapper size="s">
+        <IconWrapper size="sm">
           <LayoutGrid aria-hidden />
         </IconWrapper>
-        <IconWrapper size="s">
+        <IconWrapper size="sm">
           <PanelLeft aria-hidden />
         </IconWrapper>
       </div>

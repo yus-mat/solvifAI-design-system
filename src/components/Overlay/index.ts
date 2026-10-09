@@ -1,5 +1,6 @@
 export { Popover } from './Popover';
 export type { PopoverProps } from './Popover';
+export type { PopoverType } from './overlayTypes';
 
 export { DropdownList } from './DropdownList';
 export type { DropdownListProps } from './DropdownList';

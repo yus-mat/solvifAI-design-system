@@ -13,7 +13,7 @@ const sizeClassNames: Record<
     wrapper: 'size-4 p-px',
     icon: 'size-3.5',
   },
-  s: {
+  sm: {
     wrapper: 'size-5 p-0.5',
     icon: 'size-4',
   },
@@ -53,17 +53,17 @@ export function iconWrapperIconClassName(size: IconWrapperSize = 'md') {
 /** Map Button `size` to IconWrapper size for leading/trailing icons. */
 export const buttonIconWrapperSize: Record<'md' | 'sm', IconWrapperSize> = {
   md: 'md',
-  sm: 's',
+  sm: 'sm',
 };
 
 /** Map ButtonIcon `size` to IconWrapper size. */
 export const buttonIconOnlyWrapperSize: Record<'md' | 'sm', IconWrapperSize> = {
   md: 'md',
-  sm: 's',
+  sm: 'sm',
 };
 
 /** Map Tag `size` to IconWrapper size. */
 export const tagIconWrapperSize: Record<'sm' | 'md', IconWrapperSize> = {
   sm: 'xs',
-  md: 's',
+  md: 'sm',
 };

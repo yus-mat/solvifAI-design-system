@@ -62,7 +62,7 @@ function AnalysisPageContent() {
             {isLoading ? (
               <div className="flex flex-1 flex-col items-center justify-center gap-4 py-24">
                 <IconWrapper
-                  size="s"
+                  size="sm"
                   className="animate-spin text-text-action-primary"
                 >
                   <LoaderCircle aria-hidden />

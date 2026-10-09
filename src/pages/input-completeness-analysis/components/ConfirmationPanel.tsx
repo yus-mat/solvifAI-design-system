@@ -406,7 +406,7 @@ export function ConfirmationPanel({
                   className="pr-9"
                 />
                 <span className="pointer-events-none absolute inset-y-0 right-2 z-[2] flex items-center text-text-neutral-muted">
-                  <IconWrapper size="s">
+                  <IconWrapper size="sm">
                     <Search aria-hidden />
                   </IconWrapper>
                 </span>

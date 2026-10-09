@@ -25,7 +25,7 @@ export type PickerProps = {
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'value'>;
 
 const defaultTrailingSlot = (
-  <IconWrapper size="s">
+  <IconWrapper size="sm">
     <Check aria-hidden />
   </IconWrapper>
 );
